@@ -1,13 +1,8 @@
 class UsersController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
   
-  # Protect these actions behind an admin login
-  # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
+  before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
   before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
   
-
-  # render new.rhtml
   def new
     @user = User.new
   end
@@ -18,10 +13,10 @@ class UsersController < ApplicationController
     @user.register! if @user && @user.valid?
     success = @user && @user.valid?
     if success && @user.errors.empty?
-            redirect_back_or_default('/')
+      redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
     else
-      flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
+      flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin."
       render :action => 'new'
     end
   end
@@ -63,10 +58,6 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
   
-  # There's no page here to update or destroy a user.  If you add those, be
-  # smart -- make sure you check that the visitor is authorized to do so, that they
-  # supply their old password along with a new one to update it, etc.
-
 protected
   def find_user
     @user = User.find(params[:id])

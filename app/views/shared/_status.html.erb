@@ -1,0 +1,7 @@
+<div id="status">
+  <% if logged_in? %>
+    You are logged in as <%= current_user %> (<%= link_to 'logout', logout_path %>)
+  <% else %>
+    You are not logged in (<%= link_to 'signup', signup_path %>)
+  <% end %>
+</div>
