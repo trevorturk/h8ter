@@ -6,6 +6,7 @@ Rails::Initializer.run do |config|
   require 'yaml'
   
   config.time_zone = 'UTC'
+  config.active_record.observers = :user_observer
   config.active_record.partial_updates = true
   
   # The session_key and secret (for verifying session data integrity) are set in config/database.yml
