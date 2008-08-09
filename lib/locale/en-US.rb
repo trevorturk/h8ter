@@ -1,4 +1,4 @@
-I18n.store_translations 'h8ter',
+I18n.store_translations 'en-US',
 :url => 'http://h8ter.org',
 :title => 'h8ter',
 :tagline => 'What do you hate?',
