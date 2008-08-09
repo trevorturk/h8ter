@@ -4,7 +4,6 @@ http://almosteffortless.com/h8ter
 
 == Installation
 
-0: sudo gem install rails
 1: cp config/database.example.yml config/database.yml
 2: rake db:create
 3: rake db:schema:load

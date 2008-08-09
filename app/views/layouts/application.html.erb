@@ -4,19 +4,20 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="generator" content="http://almosteffortless.com/h8ttr/" />
-  <title>h8ter: What do you hate?</title>
+  <title><%=t :title %>: <%=t :tagline %></title>
   <%= javascript_include_tag :defaults, :cache => true %>
   <%= stylesheet_link_tag 'application' %>
 </head>
 <body>
+  <div id="header">
+    <h1><%= link_to t(:title), root_path %></h1>
+  </div>
+  <%= content_tag 'div', h(flash[:notice]), :id => 'notice' if flash[:notice] %>
+  <%= content_tag 'div', h(flash[:error]), :id => 'error' if flash[:error] %>
   <div id="wrapper">
-    <%= render :partial => 'shared/status' %>
-    <div id="header">
-      <h1><%= link_to 'h8ter', root_path %><span id="tagline">What do you hate?</span></h1>
+    <div id="content">
+      <%= yield %>
     </div>
-    <%= content_tag 'div', h(flash[:notice]), :id => 'notice' if flash[:notice] %>
-    <%= content_tag 'div', h(flash[:error]), :id => 'error' if flash[:error] %>
-    <%= yield %>
   </div>
 </body>
 </html>

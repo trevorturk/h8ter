@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   
-  map.root :controller => 'sessions', :action => 'new'
+  map.root :controller => 'home', :action => 'index'
   
   map.resource :session  
   map.resources :users, :member => {:suspend => :put, :unsuspend => :put, :purge => :delete}
