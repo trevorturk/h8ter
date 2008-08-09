@@ -18,13 +18,19 @@ body {
   margin: 20px auto;
 	padding: 10px;
 	background: transparent url(/images/arrow.gif) no-repeat scroll 30px 0;
-	
 }
 
 #header {
 	width: 760px;
   margin: 20px auto;
 	padding: 10px;
+}
+
+#notice, #error {
+	width: 740px;
+  margin: 0 auto;
+	background: #fff;
+	padding: 5px 10px;
 }
 
 #content {
@@ -62,12 +68,6 @@ h3 {
 	float: right;
 }
 
-#notice, #error {
-	margin: 20px 10px;
-	padding: 2px 6px;
-	background: #FFFAD6;
-}
-
 .home-copy {
 	line-height: 1.3em;
 	padding: 0 4px;
@@ -100,12 +100,36 @@ h3 {
 
 #home-links a:hover {
 	color: #fff;
-	background: #24a;
+	background: #06b34d;
 }
 
 #home-left {
 	float: left;
 	width: 510px;
+}
+
+#home-right {
+	float: left;
+	margin: 36px 0 0 20px;
+	font-size: 14px;
+}
+
+#home-right label {
+	font-size: 10px;
+}
+
+#home-inputs input {
+	width: 180px;
+	padding: 4px 2px;
+}
+
+#home-checkbox {
+	padding: 6px 0;
+}
+
+#home-right #home-submit {
+	float: right;
+	margin-top: -26px;
 }
 
 #start-link {
@@ -123,7 +147,19 @@ h3 {
 
 #start-link a:hover {
 	color: #000;
-	background: #3cff8c;
+}
+
+#footer {
+	text-align: right;
+}
+
+#footer a {
+	text-decoration: none;
+	color: #000;
+}
+
+#footer a:hover {
+	color: #fff;
 }
 
 .clear {

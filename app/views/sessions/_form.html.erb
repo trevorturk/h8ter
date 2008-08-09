@@ -1,0 +1,17 @@
+<b>Please Sign In</b>
+
+<% form_tag session_path do -%>
+  <div id="home-inputs">
+    <%= label_tag 'username' %><br />
+    <%= text_field_tag 'login', @login %><br />
+    <%= label_tag 'password' %><br/>
+    <%= password_field_tag 'password', nil %><br />
+  </div>
+  <div id="home-checkbox">
+    <%= check_box_tag 'remember_me', '1', @remember_me %>
+    <%= label_tag 'remember_me', 'Remember me' %>
+  </div>
+  <div id="home-submit">
+    <%= submit_tag 'Sign In &raquo;' %>
+  </div>
+<% end -%>
