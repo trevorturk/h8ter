@@ -79,29 +79,29 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_should_remember_me_for_one_week
-    before = 1.week.from_now.utc
+    before = Time.zone.at(1.week.from_now.utc).to_s(:db)
     users(:quentin).remember_me_for 1.week
-    after = 1.week.from_now.utc
+    after = Time.zone.at(1.week.from_now.utc).to_s(:db)
     assert_not_nil users(:quentin).remember_token
     assert_not_nil users(:quentin).remember_token_expires_at
-    assert users(:quentin).remember_token_expires_at.between?(before, after)
+    assert users(:quentin).remember_token_expires_at.to_s(:db).between?(before, after)
   end
 
   def test_should_remember_me_until_one_week
-    time = 1.week.from_now.utc
+    time = Time.zone.at(1.week.from_now.utc).to_s(:db)
     users(:quentin).remember_me_until time
     assert_not_nil users(:quentin).remember_token
     assert_not_nil users(:quentin).remember_token_expires_at
-    assert_equal users(:quentin).remember_token_expires_at, time
+    assert_equal users(:quentin).remember_token_expires_at.to_s(:db), time
   end
 
   def test_should_remember_me_default_two_weeks
-    before = 2.weeks.from_now.utc
+    before = Time.zone.at(2.weeks.from_now.utc).to_s(:db)
     users(:quentin).remember_me
-    after = 2.weeks.from_now.utc
+    after = Time.zone.at(2.weeks.from_now.utc).to_s(:db)
     assert_not_nil users(:quentin).remember_token
     assert_not_nil users(:quentin).remember_token_expires_at
-    assert users(:quentin).remember_token_expires_at.between?(before, after)
+    assert users(:quentin).remember_token_expires_at.to_s(:db).between?(before, after)
   end
 
   def test_should_register_passive_user
