@@ -149,6 +149,14 @@ h3 {
 	color: #000;
 }
 
+#signin-left {
+	float: left;
+}
+
+#signin-right {
+	float: right;
+}
+
 #footer {
 	text-align: right;
 }
