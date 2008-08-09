@@ -9,7 +9,7 @@ class UserTest < ActiveSupport::TestCase
       assert !user.new_record?, "#{user.errors.full_messages.to_sentence}"
     end
   end
-
+  
   def test_should_initialize_activation_code_upon_creation
     user = create_user
     user.reload
@@ -48,6 +48,39 @@ class UserTest < ActiveSupport::TestCase
     assert_no_difference 'User.count' do
       u = create_user(:email => nil)
       assert u.errors.on(:email)
+    end
+  end
+  
+  def test_should_require_login_to_be_15_chars_or_less
+    assert_no_difference 'User.count' do
+      u = create_user(:login => '1234567890123456')
+      assert u.errors.on(:login)
+    end
+  end
+  
+  def test_should_require_login_to_be_alpha_numeric_with_underscores
+    assert_no_difference 'User.count' do
+      u = create_user(:login => '='); assert u.errors.on(:login)
+      u = create_user(:login => '~'); assert u.errors.on(:login)
+      u = create_user(:login => '!'); assert u.errors.on(:login)
+      u = create_user(:login => '#'); assert u.errors.on(:login)
+      u = create_user(:login => '.'); assert u.errors.on(:login)
+      u = create_user(:login => '/'); assert u.errors.on(:login)
+      u = create_user(:login => '-'); assert u.errors.on(:login)
+      u = create_user(:login => '+'); assert u.errors.on(:login)
+      u = create_user(:login => '|'); assert u.errors.on(:login)
+      u = create_user(:login => ':'); assert u.errors.on(:login)
+      u = create_user(:login => ')'); assert u.errors.on(:login)
+      u = create_user(:login => '*'); assert u.errors.on(:login)
+      u = create_user(:login => '&'); assert u.errors.on(:login)
+      u = create_user(:login => '%'); assert u.errors.on(:login)      
+      u = create_user(:login => '$'); assert u.errors.on(:login)
+    end
+  end
+  
+  def test_should_allow_user_accounts_with_one_character
+    assert_difference 'User.count' do
+      u = create_user(:login => '_')
     end
   end
 

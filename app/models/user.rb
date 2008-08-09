@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   include Authorization::StatefulRoles
   validates_presence_of     :login
-  validates_length_of       :login,    :within => 3..40
+  validates_length_of       :login,    :within => 1..15
   validates_uniqueness_of   :login,    :case_sensitive => false
   validates_format_of       :login,    :with => /^[a-zA-Z0-9\_]*?$/, :message => "can only contain letters, numbers and underscores"
 
