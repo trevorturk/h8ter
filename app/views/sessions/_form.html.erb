@@ -1,7 +1,7 @@
 <% form_tag session_path do -%>
   <div id="home-inputs">
     <%= label_tag 'username' %><br />
-    <%= text_field_tag 'login', @login %><br />
+    <%= text_field_tag 'login', @login, :maxlength => 15 %><br />
     <%= label_tag 'password' %><br/>
     <%= password_field_tag 'password', nil %><br />
   </div>
@@ -13,3 +13,7 @@
     <%= submit_tag 'Sign In &raquo;' %>
   </div>
 <% end -%>
+
+<script type="text/javascript">
+  $("#login").focus();
+</script>

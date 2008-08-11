@@ -1,9 +1,9 @@
 <div id="home-left">
   
   <div id="home-links">
-    <%= link_to_function 'What', "$('home-what').show();$('home-why').hide();$('home-how').hide();" %>
-    <%= link_to_function 'Why', "$('home-what').hide();$('home-why').show();$('home-how').hide();" %>
-    <%= link_to_function 'How', "$('home-what').hide();$('home-why').hide();$('home-how').show();" %>
+    <%= link_to 'What', '#', :id => 'home-what-link' %>
+    <%= link_to 'Why', '#', :id => 'home-why-link' %>
+    <%= link_to 'How', '#', :id => 'home-how-link' %>
   </div>
   
   <h2><%=t :tagline %></h2>
@@ -18,10 +18,27 @@
 </div>
 
 <div id="home-right">
-  
   <b>Please Sign In</b>
   <%= render :partial => 'sessions/form' %>
-  
 </div>
-
 <div class="clear"> </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#home-what-link').click(function() {
+      $('#home-what').show();
+      $('#home-why').hide();
+      $('#home-why').hide();
+    });
+    $('#home-why-link').click(function() {
+      $('#home-what').hide();
+      $('#home-why').show();
+      $('#home-how').hide();
+    });
+    $('#home-how-link').click(function() {
+      $('#home-what').hide();
+      $('#home-why').hide();
+      $('#home-how').show();
+    });
+  });
+</script>

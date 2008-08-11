@@ -1,0 +1,14 @@
+<% @message ||= Message.new %>
+  <div id="message-new">
+    <% form_for :message, :url => messages_path do |f| -%>
+    <%= f.text_area :body, :cols => 40, :rows => 2, :maxlength => 140 %>
+    <p><%= submit_tag 'Hate' %></p>
+  </div>
+<% end -%>
+
+<%#= javascript_tag "$('message_body').focus();$('message_body').writeAttribute('autocomplete', 'off');" %>
+
+<script type="text/javascript">
+  $("#message_body").charCounter('140', '');
+  $("#message_body").focus();
+</script>

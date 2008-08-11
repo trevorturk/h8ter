@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => 'home', :action => 'index'
   
+  map.resources :messages
   map.resource :session
   map.resources :users, :member => {:suspend => :put, :unsuspend => :put, :purge => :delete}
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
