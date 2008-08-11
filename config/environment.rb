@@ -8,11 +8,15 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
   config.active_record.observers = :user_observer
   config.active_record.partial_updates = true
+  config_db = YAML.load_file('config/database.yml')
   
   # The session_key and secret (for verifying session data integrity) are set in config/database.yml
-  db = YAML.load_file('config/database.yml')
   config.action_controller.session = {
-    :session_key => db[RAILS_ENV]['session_key'],
-    :secret      => db[RAILS_ENV]['secret']
+    :session_key => config_db[RAILS_ENV]['session_key'],
+    :secret      => config_db[RAILS_ENV]['secret']
   }
+  
+  # The site url (with a trailing slash) and admin email are set in config/database.yml
+  SITE_EMAIL = config_db[RAILS_ENV]['site_email']
+  SITE_URL = config_db[RAILS_ENV]['site_url']
 end

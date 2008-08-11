@@ -2,23 +2,29 @@ development:
   adapter: sqlite3
   database: db/development.sqlite3
   timeout: 5000
-  session_key: h8ttr_development
+  session_key: h8ter_development
   secret: XSheUg1YEEkLX6bSCJYiwgNiV859hL2q
+  site_email: admin@example.com
+  site_url: http://example.com
 
 test:
   adapter: sqlite3
   database: db/test.sqlite3
   timeout: 5000
-  session_key: h8ttr_test
+  session_key: h8ter_test
   secret: 1mF89VtBzDu5doFDnu3pfJHLRJxwaFzH
-
+  site_email: admin@example.com
+  site_url: http://example.com
+  
 # This "session_key" can be any string, and should be unique to your installation (e.g. mysite_session)
 # This "secret" must be a random string, at least 30 characters long, and kept secret for security
 production:
   adapter: mysql
-  database: h8ttr_production
+  database: h8ter
   username: root
   password: 
   host: localhost
   session_key: 
   secret: 
+  site_email: 
+  site_url: 
