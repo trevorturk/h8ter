@@ -5,6 +5,7 @@ development:
   session_key: h8ter_development
   secret: XSheUg1YEEkLX6bSCJYiwgNiV859hL2q
   site_email: admin@example.com
+  site_name: h8ter
   site_url: http://example.com
 
 test:
@@ -14,6 +15,7 @@ test:
   session_key: h8ter_test
   secret: 1mF89VtBzDu5doFDnu3pfJHLRJxwaFzH
   site_email: admin@example.com
+  site_name: h8ter
   site_url: http://example.com
   
 # This "session_key" can be any string, and should be unique to your installation (e.g. mysite_session)
@@ -27,4 +29,5 @@ production:
   session_key: 
   secret: 
   site_email: 
+  site_name: h8ter  
   site_url: 

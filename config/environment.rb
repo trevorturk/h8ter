@@ -18,5 +18,6 @@ Rails::Initializer.run do |config|
   
   # The site url (with a trailing slash) and admin email are set in config/database.yml
   SITE_EMAIL = config_db[RAILS_ENV]['site_email']
+  SITE_NAME = config_db[RAILS_ENV]['site_name']
   SITE_URL = config_db[RAILS_ENV]['site_url']
 end
