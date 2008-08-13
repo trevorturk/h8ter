@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
   
-  before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
+  # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
+  # before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
+  
+  def show
+    @user = User.find_by_login(params[:login])
+    raise ActiveRecord::RecordNotFound unless @user
+    flash[:prompt] = :prompt unless logged_in?
+  end
   
   def new
     @user = User.new
@@ -38,25 +44,25 @@ class UsersController < ApplicationController
     end
   end
 
-  def suspend
-    @user.suspend! 
-    redirect_to users_path
-  end
-
-  def unsuspend
-    @user.unsuspend! 
-    redirect_to users_path
-  end
-
-  def destroy
-    @user.delete!
-    redirect_to users_path
-  end
-
-  def purge
-    @user.destroy
-    redirect_to users_path
-  end
+  # def suspend
+  #   @user.suspend! 
+  #   redirect_to users_path
+  # end
+  # 
+  # def unsuspend
+  #   @user.unsuspend! 
+  #   redirect_to users_path
+  # end
+  # 
+  # def destroy
+  #   @user.delete!
+  #   redirect_to users_path
+  # end
+  # 
+  # def purge
+  #   @user.destroy
+  #   redirect_to users_path
+  # end
   
 protected
   def find_user

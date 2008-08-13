@@ -17,13 +17,12 @@
   </div>
   <%= content_tag 'div', h(flash[:notice]), :id => 'notice' if flash[:notice] %>
   <%= content_tag 'div', h(flash[:error]), :id => 'error' if flash[:error] %>
+  <%= render :partial => 'shared/prompt' if flash[:prompt] %>
   <div id="wrapper">
-    <div id="content">
-      <%= yield %>
-    </div>
-    <div id="footer">
-      <%= link_to '&aelig;', 'http://almosteffortless.com' %>
-    </div>
+  <%= yield %>
+  <div id="footer">
+    <%= link_to '&aelig;', 'http://almosteffortless.com' %>
+  </div>
   </div>
 </body>
 </html>

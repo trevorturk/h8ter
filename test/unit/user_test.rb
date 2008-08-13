@@ -182,6 +182,10 @@ class UserTest < ActiveSupport::TestCase
     assert_not_nil users(:quentin).deleted_at
     assert users(:quentin).deleted?
   end
+  
+  def test_to_s
+    assert_equal users(:quentin).to_s, users(:quentin).login
+  end
 
 protected
   def create_user(options = {})

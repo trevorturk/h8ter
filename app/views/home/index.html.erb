@@ -1,34 +1,31 @@
-<div id="home-left">
-  
-  <div id="home-links">
-    <%= link_to 'What', '#', :id => 'home-what-link' %>
-    <%= link_to 'Why', '#', :id => 'home-why-link' %>
-    <%= link_to 'How', '#', :id => 'home-how-link' %>
+<div id="content-wide">
+  <div id="home-left">
+    <div id="home-links">
+      <%= link_to t(:what), '#', :id => 'home-what-link' %>
+      <%= link_to t(:why), '#', :id => 'home-why-link' %>
+      <%= link_to t(:how), '#', :id => 'home-how-link' %>
+    </div>
+    <h2><%=t :tagline %></h2>
+    <p><img src="/images/box.gif" /></p>
+    <h3 id="home-what" class="home-copy"><%=t :home_what %></h3>
+    <h3 id="home-why" class="home-copy" style="display:none;"><%=t :home_why %></h3>
+    <h3 id="home-how" class="home-copy" style="display:none;"><%=t :home_how %></h3>
+    <div id="start-link"><%= link_to t(:start_link), signup_path %></div>
   </div>
-  
-  <h2><%=t :tagline %></h2>
-  
-  <p><img src="/images/box.gif" /></p>
-  <h3 id="home-what" class="home-copy"><%=t :home_what %></h3>
-  <h3 id="home-why" class="home-copy" style="display:none;"><%=t :home_why %></h3>
-  <h3 id="home-how" class="home-copy" style="display:none;"><%=t :home_how %></h3>
-  
-  <div id="start-link"><%= link_to t(:start_link), signup_path %></div>
-  
-</div>
 
-<div id="home-right">
-  <b>Please Sign In</b>
-  <%= render :partial => 'sessions/form' %>
+  <div id="home-right">
+    <b>Please Sign In</b>
+    <%= render :partial => 'sessions/form' %>
+  </div>
+  <div class="clear"> </div>
 </div>
-<div class="clear"> </div>
 
 <script type="text/javascript">
   $(document).ready(function() {
     $('#home-what-link').click(function() {
       $('#home-what').show();
       $('#home-why').hide();
-      $('#home-why').hide();
+      $('#home-how').hide();
     });
     $('#home-why-link').click(function() {
       $('#home-what').hide();

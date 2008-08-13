@@ -33,14 +33,37 @@ body {
 	font-size: 12px;
 }
 
-#notice, #error {
+#notice, #error, #prompt {
 	width: 740px;
   margin: 0 auto;
 	background: #fff;
 	padding: 5px 10px;
 }
 
-#content {
+#prompt #start-link {
+	float: right;
+	margin: 40px;
+}
+
+#prompt-message {
+	width: 500px;
+}
+
+#prompt-message {
+	margin: 8px 0;
+}
+
+#prompt-message h2 {
+	margin: 8px 0;
+}
+
+#content-wide {
+	padding: 15px 20px;
+	background: #fff;
+}
+
+#content-primary {
+	width: 500px;
 	padding: 15px 20px;
 	background: #fff;
 }
