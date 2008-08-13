@@ -8,8 +8,8 @@ class UserMailer < ActionMailer::Base
   
   def activation(user)
     setup_email(user)
-    @subject    += 'Your account has been activated!'
-    @body[:url]  = SITE_URL
+    @subject    += 'Your account has been activated'
+    @body[:url]  = "#{SITE_URL}"
   end
   
 protected
@@ -17,7 +17,7 @@ protected
   def setup_email(user)
     @recipients  = "#{user.email}"
     @from        = SITE_EMAIL
-    @subject     = "[SITE_NAME] "
+    @subject     = "[#{SITE_NAME}] "
     @sent_on     = Time.now
     @body[:user] = user
   end
