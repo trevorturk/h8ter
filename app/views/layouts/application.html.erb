@@ -13,11 +13,11 @@
     <div id="nav">
       <%= render :partial => 'shared/nav' %>
     </div>
-    <h1><%= link_to t(:title), root_path %></h1>
+    <a href="/"><img src="/images/h8ter.gif" alt="h8ter" /></a>
   </div>
   <%= content_tag 'div', h(flash[:notice]), :id => 'notice' if flash[:notice] %>
   <%= content_tag 'div', h(flash[:error]), :id => 'error' if flash[:error] %>
-  <%= render :partial => 'shared/prompt' if flash[:prompt] %>
+  <%= render :partial => 'shared/prompt' if !logged_in? && current_controller == 'users' && current_action == 'show' %>
   <div id="wrapper">
   <%= yield %>
   <div id="footer">

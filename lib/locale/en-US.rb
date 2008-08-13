@@ -18,8 +18,4 @@ they're hating on. Or, you can stop hating on them when hell freezes
 over. You can even set quiet times on h8ter so people can hate behind your back.
 <br /><br /><b>h8ter puts you in control</b> and becomes a modern antidote to people
 having so much more than you.",
-:start_link => 'Start Hating!',
-:prompt => "<h2>Hate there! trevorturk is using h8ter.</h2>
-h8ter is a free service that lets you hate on anything and everything
-using the web, your phone, and your unrelenting malice. Join today to
-start hating on trevorturk's life."
+:start_link => 'Start Hating!'

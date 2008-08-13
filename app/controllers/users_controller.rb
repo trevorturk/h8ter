@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_login(params[:login])
     raise ActiveRecord::RecordNotFound unless @user
-    flash[:prompt] = :prompt unless logged_in?
   end
   
   def new

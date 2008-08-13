@@ -10,20 +10,20 @@ body {
   font-family: 'Lucida Grande', sans-serif;
   font-weight: normal;
   color: #111;
-	background: #980000;
+	background: #9bd9e0;
 }
 
 #wrapper {
   width: 760px;
-  margin: 26px auto;
+  margin: 20px auto;
 	padding: 10px;
 	background: transparent url(/images/arrow.gif) no-repeat scroll 30px 0;
 }
 
 #header {
 	width: 760px;
-  margin: 20px auto;
-	padding: 10px;
+  margin: 10px auto 20px auto;
+	padding: 10px 0;
 }
 
 #nav {
@@ -63,7 +63,16 @@ body {
 }
 
 #content-primary {
-	width: 500px;
+	float: left;
+	width: 520px;
+	padding: 15px 20px;
+	background: #fff;
+}
+
+#content-secondary {
+	float: left;
+	width: 145px;
+	margin-left: 15px;
 	padding: 15px 20px;
 	background: #fff;
 }
@@ -75,17 +84,6 @@ a {
 
 a:hover {
 	text-decoration: underline;
-}
-
-h1 {
-	font-family: georgia, sans-serif;
-	margin: 0;
-}
-
-#header h1 a {
-	color: #000;
-	font-size: 46px;
-	text-decoration: none;
 }
 
 h2 {

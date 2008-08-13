@@ -1,3 +1,10 @@
-<h2><%=t :tagline %></h2>
+<div id="content-primary">
+  <h2><%=t :tagline %></h2>
+  <%= render :partial => 'messages/form' %>
+</div>
 
-<%= render :partial => 'messages/form' %>
+<div id="content-secondary">
+  ...
+</div>
+
+<div class="clear"> </div>
