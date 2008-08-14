@@ -45,6 +45,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    if logged_in?
+      @user = current_user
+    else
+      flash[:error] = "Please log in."
+      redirect_to '/login'
+    end
+  end
+
   # def suspend
   #   @user.suspend! 
   #   redirect_to users_path

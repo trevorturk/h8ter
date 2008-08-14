@@ -51,7 +51,6 @@ class UsersControllerTest < ActionController::TestCase
     assigns(:user).reload
     assert assigns(:user).pending?
   end
-
   
   def test_should_sign_up_user_with_activation_code
     create_user

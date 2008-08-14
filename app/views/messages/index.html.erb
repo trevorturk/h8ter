@@ -4,7 +4,12 @@
 </div>
 
 <div id="content-secondary">
-  ...
+  <div id="secondary-section">
+    <span class="left">Hi,</span>
+    <span class="right"><%= link_to 'your profile', profile_path(current_user.to_s) %></span>
+    <div class="clear"> </div>
+  </div>
+  <%= current_user %>
 </div>
 
 <div class="clear"> </div>
