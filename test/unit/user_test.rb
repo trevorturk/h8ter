@@ -183,6 +183,13 @@ class UserTest < ActiveSupport::TestCase
     assert users(:quentin).deleted?
   end
   
+  def test_should_not_allow_email_change
+    u = users(:quentin)
+    u.update_attribute(:email, 'readonly@example.com')
+    u.reload
+    assert_not_equal u.email, 'readonly@example.com'
+  end
+  
   def test_to_s
     assert_equal users(:quentin).to_s, users(:quentin).login
   end

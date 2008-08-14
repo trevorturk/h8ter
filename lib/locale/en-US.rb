@@ -10,7 +10,7 @@ and stay hateful through the exchange of quick, malicious answers to
 one simple question: <b>What do you hate?</b>',
 :home_why => "Why? Because even basic hate can be hurtful to family members,
 friends, and colleagues—especially when it's personal and unnecessary.<ul>
-<li><b>Eating soup?</b> Only old dusty mother fuckers with no teeth eat soup</li>
+<li><b>Eating soup?</b> Only old dusty motherfuckers with no teeth eat soup</li>
 <li><b>Running late to a meeting?</b> I guess you'll be late making those fries too</li>
 <li><b>Partying?</b> You've never been invited to a party—stop lying</li></ul>",
 :home_how => "With h8ter, you can hyper-hate on your friends and always know what

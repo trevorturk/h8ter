@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   validates_format_of       :email,    :with => RE_EMAIL_OK, :message => MSG_EMAIL_BAD
 
   attr_accessible :login, :email, :name, :password, :password_confirmation
+  attr_readonly :email
 
   def self.authenticate(login, password)
     u = find_in_state :first, :active, :conditions => {:login => login} # need to get the salt

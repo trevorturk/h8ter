@@ -15,7 +15,6 @@ role :db,  "000.00.00.000", :primary => true
 
 before  'deploy:update_code', 'deploy:web:disable'
 after   'deploy:update_code', 'deploy:config_database'
-after   'deploy:update_code', 'deploy:create_symlinks'
 after   'deploy:restart', 'deploy:web:enable'
 
 namespace :deploy do
@@ -27,14 +26,5 @@ namespace :deploy do
     put(File.read('config/database.yml'), "#{release_path}/config/database.yml", :mode => 0444)
     # For security consider uploading a production-only database.yml to your server and using this instead:
     # run "cp #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  end
-  task :create_symlinks do
-    require 'yaml'
-    download "#{release_path}/config/symlinks.yml", "/tmp/h8ter_symlinks.yml"
-    YAML.load_file('/tmp/h8ter_symlinks.yml').each do |share|
-      run "rm -rf #{release_path}/public/#{share}"
-      run "mkdir -p #{shared_path}/system/#{share}"
-      run "ln -nfs #{shared_path}/system/#{share} #{release_path}/public/#{share}"
-    end
   end
 end

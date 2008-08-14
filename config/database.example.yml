@@ -4,7 +4,7 @@ development:
   timeout: 5000
   session_key: h8ter_development
   secret: XSheUg1YEEkLX6bSCJYiwgNiV859hL2q
-  site_email: admin@example.com
+  site_email: example <admin@example.com>
   site_name: h8ter
   site_url: http://example.com
 
@@ -14,7 +14,7 @@ test:
   timeout: 5000
   session_key: h8ter_test
   secret: 1mF89VtBzDu5doFDnu3pfJHLRJxwaFzH
-  site_email: admin@example.com
+  site_email: example <admin@example.com>
   site_name: h8ter
   site_url: http://example.com
   
