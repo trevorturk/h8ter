@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class IntegrationTest < ActionController::IntegrationTest
+  fixtures :all
 
   def test_show_user
     get '/quentin/'

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080811034351) do
+ActiveRecord::Schema.define(:version => 20080814055959) do
 
   create_table "messages", :force => true do |t|
     t.integer  "user_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20080811034351) do
     t.datetime "activated_at"
     t.string   "state",                                    :default => "passive"
     t.datetime "deleted_at"
+    t.integer  "messages_count",                           :default => 0,         :null => false
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

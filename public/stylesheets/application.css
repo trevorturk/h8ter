@@ -235,9 +235,14 @@ h3 {
 }
 
 #profile-gravatar, #profile-login {
-	margin-right: 4px;
+	margin-right: 6px;
 	line-height: 1;
 	float: left;
+}
+
+.gravatar {
+	border: 1px solid #D0D0D0;
+	padding: 2px;
 }
 
 #footer {

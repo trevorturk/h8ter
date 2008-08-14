@@ -9,10 +9,8 @@ class User < ActiveRecord::Base
   validates_length_of       :login,    :within => 1..15
   validates_uniqueness_of   :login,    :case_sensitive => false
   validates_format_of       :login,    :with => /^[a-zA-Z0-9\_]*?$/, :message => "can only contain letters, numbers and underscores"
-
   validates_format_of       :name,     :with => RE_NAME_OK,  :message => MSG_NAME_BAD, :allow_nil => true
   validates_length_of       :name,     :maximum => 100
-
   validates_presence_of     :email
   validates_length_of       :email,    :within => 6..100 
   validates_uniqueness_of   :email,    :case_sensitive => false
@@ -20,7 +18,9 @@ class User < ActiveRecord::Base
 
   attr_accessible :login, :email, :name, :password, :password_confirmation
   attr_readonly :email
-
+  
+  has_many :messages
+  
   def self.authenticate(login, password)
     u = find_in_state :first, :active, :conditions => {:login => login} # need to get the salt
     u && u.authenticated?(password) ? u : nil
