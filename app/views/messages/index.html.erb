@@ -9,7 +9,9 @@
     <span class="right"><%= link_to 'your profile', profile_path(current_user.to_s) %></span>
     <div class="clear"> </div>
   </div>
-  <%= current_user %>
+  <span id="profile-gravatar"><%= gravatar_for current_user, :size => 30 %></span>
+  <span id="profile-login"><%= current_user %></span>
+  <div class="clear"> </div>
 </div>
 
 <div class="clear"> </div>

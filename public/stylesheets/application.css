@@ -223,7 +223,7 @@ h3 {
 
 #secondary-section {
 	border-bottom: 1px solid #ccc;
-	margin-bottom: 4px;
+	margin-bottom: 10px;
 }
 
 #secondary-section .left {
@@ -232,6 +232,12 @@ h3 {
 
 #secondary-section .right {
 	font-size: 11px;
+}
+
+#profile-gravatar, #profile-login {
+	margin-right: 4px;
+	line-height: 1;
+	float: left;
 }
 
 #footer {
