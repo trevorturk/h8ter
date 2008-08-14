@@ -84,6 +84,12 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  def test_should_allow_user_accounts_with_one_character_password
+    assert_difference 'User.count' do
+      u = create_user(:password => '1', :password_confirmation => '1')
+    end
+  end
+
   def test_should_reset_password
     users(:quentin).update_attributes(:password => 'new password', :password_confirmation => 'new password')
     assert_equal users(:quentin), User.authenticate('quentin', 'new password')

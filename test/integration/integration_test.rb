@@ -15,7 +15,7 @@ class IntegrationTest < ActionController::IntegrationTest
   
   def test_should_get_settings_page
     get '/settings'
-    assert_redirected_to '/login'
+    assert_redirected_to new_session_path
     post '/session', :email => 'quentin', :password => 'monkey'
     assert_response :success
     get '/settings'

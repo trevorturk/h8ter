@@ -1,6 +1,13 @@
 <div id="content-primary">
   <h2><%=t :tagline %></h2>
   <%= render :partial => 'messages/form' %>
+  <div id="messages">
+    <ul>
+      <% @messages.each do |message| %>
+        <%= render :partial => message %>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 <div id="content-secondary">

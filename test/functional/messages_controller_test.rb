@@ -13,4 +13,11 @@ class MessagesControllerTest < ActionController::TestCase
     end
   end
   
+  def test_create_required_login
+    assert_no_difference 'Message.count' do
+      post :create, :message => {:body => 'test'}
+    end
+    assert_redirected_to new_session_path
+  end
+  
 end

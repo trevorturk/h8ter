@@ -4,4 +4,8 @@ class Message < ActiveRecord::Base
   
   belongs_to :user, :counter_cache => true
   
+  def to_s
+    self.body
+  end
+  
 end
