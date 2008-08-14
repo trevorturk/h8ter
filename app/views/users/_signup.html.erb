@@ -1,16 +1,18 @@
 <% @user ||= User.new %>
 <% @user.password = @user.password_confirmation = nil %>
-<div id="home-inputs">
-  <% form_for :user, :url => users_path do |f| -%>
-  <%= f.error_messages %>
-  <%= label_tag 'username' %><br/>
-  <%= f.text_field :login, :maxlength => 15 %><br/>
-  <%= label_tag 'email' %><br/>
-  <%= f.text_field :email %><br/>
-  <%= label_tag 'password' %><br/>
-  <%= f.password_field :password %><br/>
-  <%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
-  <%= f.password_field :password_confirmation %>
+<div id="login-form">
+  <div id="login-inputs">
+    <% form_for :user, :url => users_path do |f| -%>
+    <%= f.error_messages %>
+    <%= label_tag 'username' %><br/>
+    <%= f.text_field :login, :maxlength => 15 %><br/>
+    <%= label_tag 'email' %><br/>
+    <%= f.text_field :email %><br/>
+    <%= label_tag 'password' %><br/>
+    <%= f.password_field :password %><br/>
+    <%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
+    <%= f.password_field :password_confirmation %>
+  </div>
 </div>
 
 <p><%= submit_tag 'Create Account &raquo;' %></p>

@@ -145,25 +145,32 @@ h3 {
 #home-right {
 	float: left;
 	margin: 36px 0 0 20px;
+}
+
+#login-form {
 	font-size: 14px;
 }
 
-#home-right label {
+#login-form label {
 	font-size: 10px;
 }
 
-#home-inputs input {
+#login-inputs input {
 	width: 180px;
 	padding: 4px 2px;
 }
 
-#home-checkbox {
+#login-checkbox {
 	padding: 6px 0;
 }
 
-#home-right #home-submit {
+#login-submit {
 	float: right;
 	margin-top: -26px;
+}
+
+#login-small {
+	width: 190px;
 }
 
 #start-link {
@@ -181,14 +188,6 @@ h3 {
 
 #start-link a:hover {
 	color: #000;
-}
-
-#signin-left {
-	float: left;
-}
-
-#signin-right {
-	float: right;
 }
 
 #message-new {
@@ -222,17 +221,20 @@ h3 {
 }
 
 #footer {
-	font-size: 16px;
+	margin-top: 4px;
+	font-size: 14px;
 	font-family: 'Georgia','Serif';
 	text-align: right;
 }
 
 #footer a {
+	padding: 4px;
 	text-decoration: none;
 	color: #000;
 }
 
 #footer a:hover {
+	background: #000;
 	color: #fff;
 }
 
