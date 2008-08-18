@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   
   def index
     if logged_in?
-      @messages = Message.all(:limit => 20)
+      @messages = Message.get
       render :template => 'messages/index'
     else
       render :tempate => 'home/index'

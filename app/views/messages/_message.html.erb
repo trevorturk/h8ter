@@ -1,4 +1,5 @@
 <li>
-  <b><%= link_to current_user, profile_path(current_user.to_s) %></b>
+  <b><%= link_to message.user, profile_path(message.user.to_s) %></b>
   <%= message %>
+  <span class="detail"><%= time_ago_in_words(message.created_at) %> ago</span>
 </li>

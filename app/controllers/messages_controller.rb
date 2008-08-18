@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   before_filter :login_required, :except => [:index]
   
   def index
-    @messages = Message.all(:limit => 20)
+    @messages = Message.get
   end
   
   def create

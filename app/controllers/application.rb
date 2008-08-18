@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
   include AuthenticatedSystem
   I18n.populate { require "lib/locale/en-US.rb" }  
+  Time.zone = 'Central Time (US & Canada)'
   
   helper_method :current_action, :current_controller, :current_user, :logged_in?
   
