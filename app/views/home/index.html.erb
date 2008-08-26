@@ -6,10 +6,18 @@
       <%= link_to t(:how), '#', :id => 'home-how-link' %>
     </div>
     <h2><%=t :tagline %></h2>
-    <p><img src="/images/box.gif" /></p>
-    <h3 id="home-what" class="home-copy"><%=t :home_what %></h3>
-    <h3 id="home-why" class="home-copy" style="display:none;"><%=t :home_why %></h3>
-    <h3 id="home-how" class="home-copy" style="display:none;"><%=t :home_how %></h3>
+    <div id="home-what">
+      <p><img src="/images/h8box3.jpg" /></p>
+      <h3 class="home-copy"><%=t :home_what %></h3>
+    </div>
+    <div id="home-why" style="display:none;">
+      <p><img src="/images/h8box3.jpg" /></p>
+      <h3 class="home-copy"><%=t :home_why %></h3>
+    </div>
+    <div id="home-how" style="display:none;">
+      <p><img src="/images/h8box3.jpg" /></p>
+      <h3 class="home-copy"><%=t :home_how %></h3>
+    </div>
     <div id="start-link"><%= link_to t(:start_link), signup_path %></div>
   </div>
 

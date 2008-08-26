@@ -13,7 +13,7 @@ friends, and colleagues—especially when it's personal and unnecessary.<ul>
 <li><b>Eating soup?</b> Only old dusty motherfuckers with no teeth eat soup</li>
 <li><b>Running late to a meeting?</b> I guess you'll be late making those fries too</li>
 <li><b>Partying?</b> You've never been invited to a party—stop lying</li></ul>",
-:home_how => "With h8ter, you can hyper-hate on your friends and always know what
+:home_how => "With h8ter, you can hate on your friends and always know what
 they're hating on. Or, you can stop hating on them when hell freezes
 over. You can even set quiet times on h8ter so people can hate behind your back.
 <br /><br /><b>h8ter puts you in control</b> and becomes a modern antidote to people
