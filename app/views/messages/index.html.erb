@@ -1,6 +1,6 @@
 <div id="content-primary">
   <%= render :partial => 'messages/form' %>
-  <table class="messages messages-index">
+  <table class="messages messages-index" cellspacing="0">
     <% @messages.each do |message| %>
       <tr class="message">
         <%= render :partial => 'messages/message_user', :locals => {:message => message} %>

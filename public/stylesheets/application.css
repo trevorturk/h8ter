@@ -3,6 +3,7 @@ h1, h2, h3, h4, h5, h6, p, pre, blockquote, label, ul, ol, dl, fieldset, address
 fieldset { padding: .5em; }
 li { margin: 0; padding: 0; list-style-type: none; }
 a img { border: 0; }
+table { border-collapse: collapse;}
 
 body {
   font-size: 16px;
@@ -232,7 +233,7 @@ h3 {
 .message-user {
 	vertical-align: top;
 	width: 50px;
-	padding: 6px 5px 4px 4px;
+	padding: 6px;
 }
 
 .message-user img {
@@ -247,6 +248,15 @@ h3 {
 
 .messages-show {
 	margin-top: 10px;
+}
+
+.messages {
+	width: 100%;
+}
+
+.messages tr {
+	border-bottom: 1px solid #cecece;
+	
 }
 
 #secondary-section {

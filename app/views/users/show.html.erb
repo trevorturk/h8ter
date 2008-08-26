@@ -6,7 +6,7 @@
   </span>
   <span id="large-user"><%= @user %></span>
   <div class="clear"> </div>
-  <table class="messages messages-show">
+  <table class="messages messages-show" cellspacing="0">
     <% @user.messages.each do |message| %>
       <tr class="message">
         <%= render :partial => 'messages/message_body', :locals => {:message => message} %>
