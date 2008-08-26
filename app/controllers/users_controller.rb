@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if success && @user.errors.empty?
       self.current_user = @user
       redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up! We're sending you an email with an activation code. You'll need to activate you account in order to log in again later."
+      flash[:notice] = "Thanks for signing up! We're sending you an email with an activation code in order to verify your email address."
     else
       flash[:error]  = "We couldn't set up that account, sorry. Please try again, or contact an admin."
       render :action => 'new'

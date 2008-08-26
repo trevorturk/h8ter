@@ -78,6 +78,14 @@ class UserTest < ActiveSupport::TestCase
     end
   end
   
+  def test_should_reserve_some_common_usernames
+    assert_no_difference 'User.count' do
+      u = create_user(:login => 'admin'); assert u.errors.on(:login)
+      u = create_user(:login => 'test'); assert u.errors.on(:login)
+      u = create_user(:login => 'help'); assert u.errors.on(:login)
+    end
+  end
+  
   def test_should_allow_user_accounts_with_one_character
     assert_difference 'User.count' do
       u = create_user(:login => '_')

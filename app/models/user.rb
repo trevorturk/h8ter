@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_length_of       :login,    :within => 1..15
   validates_uniqueness_of   :login,    :case_sensitive => false
   validates_format_of       :login,    :with => /^[a-zA-Z0-9\_]*?$/, :message => "can only contain letters, numbers and underscores"
+  validates_exclusion_of    :login,    :in => RE_LOGIN_RES, :message => "is a reserved word"
   validates_format_of       :name,     :with => RE_NAME_OK,  :message => MSG_NAME_BAD, :allow_nil => true
   validates_length_of       :name,     :maximum => 100
   validates_presence_of     :email
