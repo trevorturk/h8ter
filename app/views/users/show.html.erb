@@ -1,13 +1,30 @@
 <div id="content-primary">
-  <%= @user %>
+  <span id="large-gravatar">
+    <a href="<%= profile_path(@user.login) %>">
+      <%= gravatar_for @user, :size => 75, :class => 'gravatar', :valign => 'middle' %>
+    </a>
+  </span>
+  <span id="large-user"><%= @user %></span>
+  <div class="clear"> </div>
+  <table class="messages messages-show">
+    <% @user.messages.each do |message| %>
+      <tr class="message">
+        <%= render :partial => 'messages/message_body', :locals => {:message => message} %>
+      </tr>
+    <% end %>
+  </table>
 </div>
 
 <div id="content-secondary">
-  <div id="secondary-section">
-    <span class="left">About</span>
-    <div class="clear"> </div>
-  </div>
-  <%= @user %>
+  <div id="secondary-section"><span class="left">About</span><div class="clear"> </div></div>
+  <span id="profile-login"><i><b>Name</b> <%= @user %></i></span>
+  <div id="secondary-section"><br /><span class="left">Stats</span><div class="clear"> </div></div>
+  <ul><li>
+    <span class="list-left"><%= link_to 'Messages' %></span>
+    <span class="list-right"><%= @user.messages_count %></span>
+  </li></ul>
+  <div id="secondary-section"><br /><span class="left">Haters</span><div class="clear"> </div></div>
+  <%= render :partial => 'shared/users' %>
 </div>
 
 <div class="clear"> </div>

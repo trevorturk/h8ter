@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_filter :login_required, :except => [:show, :new, :create, :activate]
   
   def show
-    @user = User.find_by_login(params[:login])
+    @user = User.find_by_login(params[:login], :include => :messages)
     raise ActiveRecord::RecordNotFound unless @user
   end
   

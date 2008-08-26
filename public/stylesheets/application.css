@@ -191,6 +191,10 @@ h3 {
 	color: #000;
 }
 
+.message {
+	line-height: 1.1em;
+}
+
 #message-new {
 	margin-top: 8px;
 	width: 500px;
@@ -221,7 +225,28 @@ h3 {
 	color: #b32218 !important;
 }
 
+.message-user {
+	vertical-align: top;
+	width: 50px;
+	padding: 6px 5px 4px 4px;
+}
+
+.message-user img {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.messages-show tr {
+	height: 50px;
+}
+
+.messages-show {
+	margin-top: 10px;
+}
+
 #secondary-section {
+	clear: both;
 	border-bottom: 1px solid #ccc;
 	margin-bottom: 10px;
 }
@@ -234,20 +259,57 @@ h3 {
 	font-size: 11px;
 }
 
+#secondary-section ul {
+	margin: 0;
+}
+
+#secondary-section ul, #secondary-section li {
+	clear: both;
+}
+
+.list-left {
+	float: left;
+}
+
+.list-right {
+	float: right;
+}
+
 #profile-gravatar, #profile-login {
 	margin-right: 6px;
 	line-height: 1;
 	float: left;
 }
 
+#large-gravatar {
+	float: left;
+}
+
+#large-user {
+	float: left;
+	font-size: 34px;
+	font-weight: bold;
+	margin: 28px 0 0 15px;
+}
+
 .detail {
-	font-size: 12px;
+	font-size: 11px;
 	color: #999;
 }
 
 .gravatar {
 	border: 1px solid #D0D0D0;
 	padding: 2px;
+}
+
+.gravatar-small {
+	border: none;
+	padding: 0;
+	margin: 0 1px 2px 0;
+}
+
+#users-top {
+	line-height: 1em;
 }
 
 #footer {

@@ -1,0 +1,5 @@
+<td class="message-body">
+  <b><%= link_to message.user, profile_path(message.user.login) %></b>
+  <%= message %>
+  <span class="detail"><%= time_ago_in_words(message.created_at) %> ago</span>
+</td>

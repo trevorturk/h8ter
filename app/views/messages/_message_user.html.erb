@@ -1,0 +1,5 @@
+<td class="message-user">
+  <a href="<%= profile_path(message.user.login) %>">
+    <%= gravatar_for message.user, :size => 48, :class => 'gravatar' %>
+  </a>
+</td>

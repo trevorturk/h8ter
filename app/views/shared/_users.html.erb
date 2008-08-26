@@ -1,0 +1,8 @@
+<% @users = User.top %>
+<div id="users-top">
+  <% @users.each do |user| %>
+    <a href="<%= profile_path(user.login) %>">
+      <%= gravatar_for user, :size => 24, :class => 'gravatar-small' %>
+    </a>
+  <% end %>
+</div>

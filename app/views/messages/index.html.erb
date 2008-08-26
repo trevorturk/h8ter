@@ -1,13 +1,13 @@
 <div id="content-primary">
-  <h2><%=t :tagline %></h2>
   <%= render :partial => 'messages/form' %>
-  <div id="messages">
-    <ul>
-      <% @messages.each do |message| %>
-        <%= render :partial => message %>
-      <% end %>
-    </ul>
-  </div>
+  <table class="messages messages-index">
+    <% @messages.each do |message| %>
+      <tr class="message">
+        <%= render :partial => 'messages/message_user', :locals => {:message => message} %>
+        <%= render :partial => 'messages/message_body', :locals => {:message => message} %>
+      </tr>
+    <% end %>
+  </table>
 </div>
 
 <div id="content-secondary">
@@ -16,9 +16,14 @@
     <span class="right"><%= link_to 'your profile', profile_path(current_user.to_s) %></span>
     <div class="clear"> </div>
   </div>
-  <span id="profile-gravatar"><%= gravatar_for current_user, :size => 30, :class => 'gravatar' %></span>
+  <span id="profile-gravatar">
+    <a href="<%= profile_path(current_user.login) %>">
+      <%= gravatar_for current_user, :size => 30, :class => 'gravatar' %>
+    </a>
+  </span>
   <span id="profile-login"><%= current_user %></span>
-  <div class="clear"> </div>
+  <div id="secondary-section"><br /><span class="left">Haters</span><div class="clear"> </div></div>
+  <%= render :partial => 'shared/users' %>
 </div>
 
 <div class="clear"> </div>

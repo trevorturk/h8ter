@@ -20,4 +20,12 @@ class MessagesControllerTest < ActionController::TestCase
     assert_redirected_to new_session_path
   end
   
+  def test_create_with_too_many_chars
+    login_as :quentin
+    char = ("a".."z").to_a; char = Array.new(141, '').collect{char[rand(char.size)]}.join
+    assert_no_difference 'Message.count' do
+      post :create, :message => {:body => char}
+    end
+  end
+  
 end
