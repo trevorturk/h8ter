@@ -322,6 +322,21 @@ h3 {
 	text-align: right;
 }
 
+.paginate {
+	margin-top: 20px;
+	text-align: right;
+	font-size: 12px;
+}
+
+.paginate span, .paginate a {
+	border: 1px solid #cecece;
+	padding: 5px 10px;
+}
+
+.paginate .disabled {
+	color: #cecece;
+}
+
 #footer a {
 	text-decoration: none;
 	color: #000;

@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   before_filter :login_required, :except => [:index]
   
   def index
-    @messages = Message.get
+    @messages = Message.get(params[:page])
   end
   
   def create

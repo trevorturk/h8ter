@@ -5,8 +5,8 @@ class Message < ActiveRecord::Base
   attr_accessible :body
   belongs_to :user, :counter_cache => true
   
-  def self.get
-    all(:limit => 20, :order => 'created_at desc', :include => :user)
+  def self.get(page = 1)
+    paginate(:page => page, :per_page => 20, :order => 'created_at desc', :include => :user)
   end
   
   def to_s
