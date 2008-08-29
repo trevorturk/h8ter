@@ -9,7 +9,10 @@
   <table class="messages messages-show" cellspacing="0">
     <% @user.messages.each do |message| %>
       <tr class="message">
-        <%= render :partial => 'messages/message_body', :locals => {:message => message} %>
+        <td class="message-body">
+          <%= auto_link(message.body) {|m| truncate(m)} %>
+          <span class="detail"><%= time_ago_in_words(message.created_at) %> ago</span>
+        </td>
       </tr>
     <% end %>
   </table>

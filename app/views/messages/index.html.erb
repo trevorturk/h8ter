@@ -3,8 +3,16 @@
   <table class="messages messages-index" cellspacing="0">
     <% @messages.each do |message| %>
       <tr class="message">
-        <%= render :partial => 'messages/message_user', :locals => {:message => message} %>
-        <%= render :partial => 'messages/message_body', :locals => {:message => message} %>
+        <td class="message-user">
+          <a href="<%= profile_path(message.user.login) %>">
+            <%= gravatar_for message.user, :size => 48, :class => 'gravatar' %>
+          </a>
+        </td>
+        <td class="message-body">
+          <b><%= link_to message.user, profile_path(message.user.login) %></b>  
+          <%= auto_link(message.body) {|m| truncate(m)} %>
+          <span class="detail"><%= time_ago_in_words(message.created_at) %> ago</span>
+        </td>
       </tr>
     <% end %>
   </table>
