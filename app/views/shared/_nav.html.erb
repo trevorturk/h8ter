@@ -1,7 +1,8 @@
 <% if logged_in? -%>
-  Hi, <%= link_to current_user, settings_path %> &nbsp; 
-  <%= link_to "Sign out", logout_path %>
+  Hi, <%= link_to current_user, profile_path(current_user.login) %> &nbsp; 
+  <%= link_to 'Settings', settings_path %> &nbsp;
+  <%= link_to "Logout", logout_path %>
 <% else -%>
   <%= link_to "Login",  login_path %> &nbsp; 
-  <%= link_to "Signup", signup_path %>
+  <%= link_to "Sign up", signup_path %>
 <% end -%>

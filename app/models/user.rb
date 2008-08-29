@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :name, :password, :password_confirmation
   attr_readonly :email
   
-  has_many :messages
+  has_many :messages, :order => 'created_at desc'
   
   def self.authenticate(login, password)
     u = find_in_state :first, :active, :conditions => {:login => login} # need to get the salt

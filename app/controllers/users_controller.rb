@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   
-  # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
-  # before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
   before_filter :login_required, :except => [:show, :new, :create, :activate]
   
   def show
@@ -48,11 +46,17 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if logged_in?
-      @user = current_user
+    @user = current_user
+  end
+  
+  def update
+    @user = current_user
+    @user.update_attributes(params[:user])
+    if @user.save
+      flash[:notice] = "Settings saved!"
+      redirect_to settings_path
     else
-      flash[:error] = "Please log in."
-      redirect_to '/login'
+      render :action => "edit"
     end
   end
 
@@ -76,8 +80,4 @@ class UsersController < ApplicationController
   #   redirect_to users_path
   # end
   
-protected
-  def find_user
-    @user = User.find(params[:id])
-  end
 end
