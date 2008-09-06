@@ -1,13 +1,17 @@
 <h2><%=t :tagline %></h2>
-<% @message ||= Message.new %>
-  <div id="message-new">
-    <% form_for :message, :url => messages_path do |f| -%>
-    <%= f.text_area :body, :cols => 40, :rows => 2, :maxlength => 140 %>
-    <p><%= submit_tag 'Hate' %></p>
-  </div>
-<% end -%>
+<% if logged_in? %>
+  <% @message ||= Message.new %>
+    <div id="message-new">
+      <% form_for :message, :url => messages_path do |f| -%>
+      <%= f.text_area :body, :cols => 40, :rows => 2, :maxlength => 140 %>
+      <p><%= submit_tag 'Hate' %></p>
+    </div>
+  <% end -%>
 
-<script type="text/javascript">
-  $("#message_body").charCounter('140', '');
-  $("#message_body").focus();
-</script>
+  <script type="text/javascript">
+    $("#message_body").charCounter('140', '');
+    $("#message_body").focus();
+  </script>
+<% else %>
+  <br />
+<% end %>
