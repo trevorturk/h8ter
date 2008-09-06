@@ -16,7 +16,7 @@ protected
   
   def setup_email(user)
     @recipients  = "#{user.email}"
-    @from        = SITE_EMAIL
+    @from        = "#{SITE_NAME} <#{SITE_EMAIL}>"
     @subject     = "[#{SITE_NAME}] "
     @sent_on     = Time.now
     @body = user
