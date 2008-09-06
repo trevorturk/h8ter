@@ -1,6 +1,6 @@
 <% message = Message.last(:include => :user) %>
 <div id="home-latest">
-  <p id="latest-header"><%= link_to message.user, profile_path(message.user.login) %> hates...</p>
+  <p id="latest-header"><%= link_to message.user.to_s + ' hates...', profile_path(message.user.login) %></p>
   <table class="messages messages-latest" cellspacing="0">
     <tr class="message">
       <td class="message-user">
@@ -13,5 +13,5 @@
       </td>
     </tr>
   </table>
-  <p class="latest-detail"><%= link_to 'More hatred &raquo;', messages_path %>
+  <p class="latest-detail"><%= link_to 'More hatred inside &raquo;', messages_path %>
 </div>

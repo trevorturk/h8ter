@@ -331,8 +331,11 @@ h3 {
 }
 
 .detail {
-	font-size: 11px;
 	color: #999;
+}
+
+.timestamp {
+	font-size: 11px;
 }
 
 .gravatar {
