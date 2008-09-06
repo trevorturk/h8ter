@@ -4,7 +4,7 @@
       <%= gravatar_for @user, :size => 75, :class => 'gravatar', :valign => 'middle' %>
     </a>
   </span>
-  <span id="large-user"><%= @user %></span>
+  <span id="large-user"><%= @user %> hates...</span>
   <div class="clear"> </div>
   <table class="messages messages-show" cellspacing="0">
     <% @user.messages.each do |message| %>
