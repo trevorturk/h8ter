@@ -7,7 +7,7 @@
   <span id="large-user"><%= @user %> hates...</span>
   <div class="clear"> </div>
   <table class="messages messages-show" cellspacing="0">
-    <% @user.messages.each do |message| %>
+    <% @messages.each do |message| %>
       <tr class="message">
         <td class="message-body">
           <%= auto_link(message.body) {|m| truncate(m)} %>
