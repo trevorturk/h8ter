@@ -22,18 +22,12 @@
 </div>
 
 <div id="content-secondary">
-  <div id="secondary-section">
-    <span class="left">Hi,</span>
-    <span class="right"><%= link_to 'your profile', profile_path(current_user.to_s) %></span>
-    <div class="clear"> </div>
-  </div>
-  <span id="profile-gravatar">
-    <a href="<%= profile_path(current_user.login) %>">
-      <%= gravatar_for current_user, :size => 30, :class => 'gravatar' %>
-    </a>
-  </span>
-  <span id="profile-login"><%= current_user %></span>
-  <div id="secondary-section"><br /><span class="left">Haters</span><div class="clear"> </div></div>
+  <% if logged_in? %>
+    <%= render :partial => 'shared/side_logged_in' %>
+  <% else %>
+    <%= render :partial => 'shared/side_logged_out' %>
+  <% end %>
+  <div id="secondary-section"><br /><span class="left">Most hateful</span><div class="clear"> </div></div>
   <%= render :partial => 'shared/users' %>
 </div>
 

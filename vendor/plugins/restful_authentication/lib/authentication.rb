@@ -9,7 +9,6 @@ module Authentication
     RE_DOMAIN_TLD   = '(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|jobs|museum)'
     RE_EMAIL_OK     = /\A#{RE_EMAIL_NAME}@#{RE_DOMAIN_HEAD}#{RE_DOMAIN_TLD}\z/i
     MSG_EMAIL_BAD   = "should look like an email address."
-    RE_LOGIN_RES    = %w(admin test help blog faq message messages login logout signup settings register home info pages page faq follow followers following followings network networks invitations invitation users user about contact status downloads api jobs tos privacy favorites hate hates updates search devices device phones phone profile profiles account accounts notifications notification subscription subscriptions welcome welcomes fail fails)
     CONSTANTS_DEFINED = 'yup' # sorry for the C idiom
   end
 

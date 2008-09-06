@@ -1,7 +1,18 @@
 require 'test_helper'
 
 class MessagesControllerTest < ActionController::TestCase
-
+  
+  def test_index_when_logged_in
+    login_as :quentin
+    get :index
+    assert_response :success
+  end
+  
+  def test_index_when_not_logged_in
+    get :index
+    assert_response :success
+  end
+  
   def test_create
     login_as :quentin
     u = users(:quentin)

@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to :action => "index"
     else
-      flash[:error] = 'There was a problem sending this message. Perhaps it is more than 140 characters?'
+      flash[:error] = 'There was a problem sending this message. Perhaps it is blank, or more than 140 characters?'
       render :action => "new"
     end
   end

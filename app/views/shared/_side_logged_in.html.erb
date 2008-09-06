@@ -1,0 +1,11 @@
+<div id="secondary-section">
+  <span class="left">Hi,</span>
+  <span class="right"><%= link_to 'your profile', profile_path(current_user.to_s) %></span>
+  <div class="clear"> </div>
+</div>
+<span id="profile-gravatar">
+  <a href="<%= profile_path(current_user.login) %>">
+    <%= gravatar_for current_user, :size => 30, :class => 'gravatar' %>
+  </a>
+</span>
+<span id="profile-login"><%= current_user %></span>

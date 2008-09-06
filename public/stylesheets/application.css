@@ -196,6 +196,31 @@ h3 {
 	color: #000;
 }
 
+#home-latest {
+	margin-top: 15px;
+	padding-top: 10px;
+	border-top: 1px solid #ccc;
+}
+
+#latest-header {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+.messages-latest {
+	width: 190px !important;
+}
+
+.messages-latest td {
+	padding-bottom: 15px;
+}
+
+.latest-detail {
+	font-size: 12px;
+	text-align: right;
+}
+
 .message {
 	line-height: 1.1em;
 }
@@ -256,7 +281,6 @@ h3 {
 
 .messages tr {
 	border-bottom: 1px solid #cecece;
-	
 }
 
 #secondary-section {
@@ -327,6 +351,7 @@ h3 {
 }
 
 #footer {
+	clear: both;
 	font-size: 16px;
 	font-family: 'Georgia','Serif';
 	text-align: right;
