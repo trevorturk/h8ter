@@ -193,7 +193,7 @@ h3 {
 }
 
 #start-link a:hover {
-	color: #000;
+	text-decoration: underline;
 }
 
 #home-latest {
@@ -219,6 +219,12 @@ h3 {
 .latest-detail {
 	font-size: 12px;
 	text-align: right;
+	margin-top: 15px;
+}
+
+.latest-detail a {
+	border: 1px solid #cecece;
+	padding: 5px 10px;
 }
 
 .message {
@@ -381,7 +387,7 @@ h3 {
 }
 
 #footer a:hover {
-	color: #fff;
+	text-decoration: underline;
 }
 
 .left {
