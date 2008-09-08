@@ -207,8 +207,9 @@ h3 {
 	padding: 0;
 }
 
-.messages-latest {
+#home-latest {
 	width: 190px !important;
+	overflow: hidden;
 }
 
 .messages-latest td {
