@@ -11,9 +11,9 @@ class SessionsController < ApplicationController
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
       redirect_back_or_default('/')
-      flash[:notice] = "Logged in successfully"
     else
-      note_failed_signin
+      flash[:error] = "Invalid login/password combination. Please try again, or contact an admin."
+      logger.warn "Failed login for '#{params[:login]}' from #{request.remote_ip} at #{Time.now.utc}"
       @login       = params[:login]
       @remember_me = params[:remember_me]
       render :action => 'new'
@@ -22,14 +22,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout_killing_session!
-    flash[:notice] = "You have been logged out."
     redirect_back_or_default('/')
   end
 
-protected
-
-  def note_failed_signin
-    flash[:error] = "Login failed"
-    logger.warn "Failed login for '#{params[:login]}' from #{request.remote_ip} at #{Time.now.utc}"
-  end
 end

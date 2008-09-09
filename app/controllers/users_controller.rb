@@ -59,25 +59,5 @@ class UsersController < ApplicationController
       render :action => "edit"
     end
   end
-
-  # def suspend
-  #   @user.suspend! 
-  #   redirect_to users_path
-  # end
-  # 
-  # def unsuspend
-  #   @user.unsuspend! 
-  #   redirect_to users_path
-  # end
-  # 
-  # def destroy
-  #   @user.delete!
-  #   redirect_to users_path
-  # end
-  # 
-  # def purge
-  #   @user.destroy
-  #   redirect_to users_path
-  # end
   
 end

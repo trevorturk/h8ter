@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   I18n.populate { require "lib/locale/en-US.rb" }  
   Time.zone = 'Central Time (US & Canada)'
   
-  helper_method :current_action, :current_controller, :current_user, :logged_in?
+  helper_method :current_action, :current_controller
   
   def current_action
     request.path_parameters['action']
