@@ -11,7 +11,7 @@
       <tr class="message">
         <td class="message-body">
           <%= auto_link(message.body) {|m| truncate(m)} %>
-          <span class="detail"><%= time_ago_in_words(message.created_at) %> ago</span>
+          <span class="detail"><%= link_to time_ago_in_words(message.created_at) + ' ago', message %></span>
         </td>
       </tr>
     <% end %>

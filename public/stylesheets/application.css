@@ -289,6 +289,10 @@ h3 {
 	border-bottom: 1px solid #cecece;
 }
 
+.message-show {
+	border: none !important;
+}
+
 #secondary-section {
 	clear: both;
 	border-bottom: 1px solid #ccc;
@@ -334,6 +338,10 @@ h3 {
 	font-size: 34px;
 	font-weight: bold;
 	margin: 28px 0 0 15px;
+}
+
+#large-user a {
+	color: #111;
 }
 
 .detail, .detail a  {

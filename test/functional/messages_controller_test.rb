@@ -39,4 +39,19 @@ class MessagesControllerTest < ActionController::TestCase
     end
   end
   
+  def test_should_show_message_when_logged_in
+    login_as :quentin
+    u = users(:quentin)
+    m = u.messages.create(:body => 'foo')
+    get :show, :id => m.id
+    assert_response :success
+  end
+  
+  def test_should_show_messages_when_not_logged_in
+    u = users(:quentin)
+    m = u.messages.create(:body => 'foo')
+    get :show, :id => m.id
+    assert_response :success
+  end
+  
 end

@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   
-  before_filter :login_required, :except => [:index]
+  before_filter :login_required, :except => [:index, :show]
   
   def index
     @messages = Message.get(params[:page])
@@ -14,6 +14,10 @@ class MessagesController < ApplicationController
       flash[:error] = 'There was a problem sending this message. Perhaps it is blank, or more than 140 characters?'
       render :action => "new"
     end
+  end
+  
+  def show
+    @message = Message.find(params[:id])
   end
   
 end
