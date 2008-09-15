@@ -1,19 +1,17 @@
 <div id="content-primary">
-  <span id="large-gravatar">
-    <a href="<%= profile_path(@message.user.login) %>">
-      <%= gravatar_for @message.user, :size => 75, :class => 'gravatar', :valign => 'middle' %>
-    </a>
-  </span>
-  <span id="large-user"><%= link_to @message.user.to_s + ' hates...', profile_path(@message.user.login) %></span>
-  <div class="clear"> </div>
-  <table class="messages messages-show" cellspacing="0">
+  <table class="messages messages-index" cellspacing="0">
     <tr class="message message-show">
+      <td class="message-user">
+        <a href="<%= profile_path(@message.user.login) %>">
+          <%= gravatar_for @message.user, :size => 48, :class => 'gravatar' %>
+        </a>
+      </td>
       <td class="message-body">
+        <a href="<%= profile_path(@message.user.login) %>"><b><%= @message.user %></b> hates...</a>
         <%= auto_link(@message.body) {|m| truncate(m)} %>
-        <span class="detail"><%= time_ago_in_words(@message.created_at) %> ago</span>
+        <span class="detail"><%= link_to time_ago_in_words(@message.created_at) + ' ago', @message %></span>
       </td>
     </tr>
   </table>
 </div>
-
 <div class="clear"> </div>
