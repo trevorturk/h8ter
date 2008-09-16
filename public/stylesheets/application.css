@@ -349,6 +349,10 @@ h3 {
 	color: #999;
 }
 
+#fail-detail {
+	margin-top: 0;
+}
+
 .gravatar {
 	border: 1px solid #D0D0D0;
 	padding: 2px;

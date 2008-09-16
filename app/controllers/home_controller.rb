@@ -8,5 +8,9 @@ class HomeController < ApplicationController
       render :tempate => 'home/index'
     end
   end
+  
+  def fail
+    redirect_to '/500.html'
+  end
     
 end
