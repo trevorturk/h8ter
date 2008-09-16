@@ -4,3 +4,4 @@
 /config/database.yml
 /config/deploy.rb
 /db/*.sqlite3
+/app/views/shared/_google_analytics.html.erb
