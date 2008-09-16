@@ -24,6 +24,6 @@
     <%= link_to '&aelig;', 'http://almosteffortless.com' %>
   </div>
   </div>
-  <%= render :partial => 'shared/google_analytics' rescue nil %>
+  <%= render :partial => 'shared/google_analytics' if GOOGLE_ANALYTICS %>
 </body>
 </html>

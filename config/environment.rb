@@ -21,6 +21,8 @@ Rails::Initializer.run do |config|
   SITE_NAME = config_db[RAILS_ENV]['site_name']
   SITE_URL = config_db[RAILS_ENV]['site_url']
   
+  GOOGLE_ANALYTICS = config_db[RAILS_ENV]['google_analytics']
+  
   RE_LOGIN_RES = %w(admin all test help blog faq message messages login logout signup settings 
     register home info pages page faq follow followers following followings network networks 
     invitations invitation users user about contact status downloads api jobs tos privacy favorites 
