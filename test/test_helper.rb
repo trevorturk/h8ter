@@ -12,5 +12,9 @@ class Test::Unit::TestCase
     @request.session[:user_id] = user ? users(user).id : nil
     @request.session[:online_at] = Time.now.utc
   end
+  
+  def defer
+    puts; puts "Deferred: #{self}"
+  end
 
 end
