@@ -17,7 +17,7 @@
     <% end %>
   </table>
   <div class="paginate">
-    <%= will_paginate @messages %>
+    <%= will_paginate @messages, :inner_window => 3, :outer_window => 3 %>
   </div>
 </div>
 
