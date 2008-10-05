@@ -54,4 +54,17 @@ class MessagesControllerTest < ActionController::TestCase
     assert_response :success
   end
   
+  def test_should_get_rss_feed
+    get :index, :format => 'rss'
+    assert_response :success
+    assert_template 'index', :format => 'rss'
+  end
+  
+  def test_should_get_rss_feed_if_no_messages
+    Message.destroy_all
+    get :index, :format => 'rss'
+    assert_response :success
+    assert_template 'index', :format => 'rss'
+  end
+  
 end

@@ -7,6 +7,7 @@
   <title><%=t :title %>: <%=t :tagline %></title>
   <%= javascript_include_tag 'application', 'jquery-1.2.6.min', 'jquery.charcounter', :cache => true %>
   <%= stylesheet_link_tag 'application' %>
+  <%= auto_discovery_link_tag(:rss, formatted_messages_url(:rss)) %>
 </head>
 <body>
   <div id="header">
