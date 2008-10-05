@@ -6,6 +6,7 @@ Rails::Initializer.run do |config|
   require 'yaml'
   
   config.gem 'httparty'
+  config.gem 'mocha'
   
   config.time_zone = 'UTC'
   config.active_record.observers = :user_observer
