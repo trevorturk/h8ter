@@ -5,6 +5,8 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
   require 'yaml'
   
+  config.gem 'httparty'
+  
   config.time_zone = 'UTC'
   config.active_record.observers = :user_observer
   config.active_record.partial_updates = true
