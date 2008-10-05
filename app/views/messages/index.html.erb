@@ -17,7 +17,7 @@
     <% end %>
   </table>
   <div class="paginate">
-    <%= will_paginate @messages, :inner_window => 3, :outer_window => 3 %>
+    <%= will_paginate @messages, :previous_label => '&laquo; Newer', :next_label => 'Older &raquo;', :page_links => false %>
   </div>
 </div>
 

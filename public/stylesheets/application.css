@@ -387,7 +387,7 @@ h3 {
 }
 
 .paginate .disabled {
-	color: #cecece;
+	display: none;
 }
 
 #footer a {
