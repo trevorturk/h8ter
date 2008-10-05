@@ -22,6 +22,8 @@ Rails::Initializer.run do |config|
   SITE_EMAIL = config_db[RAILS_ENV]['site_email']
   SITE_NAME = config_db[RAILS_ENV]['site_name']
   SITE_URL = config_db[RAILS_ENV]['site_url']
+  TWITTER_USER = config_db[RAILS_ENV]['twitter_user']
+  TWITTER_PASS = config_db[RAILS_ENV]['twitter_pass']
   
   GOOGLE_ANALYTICS = config_db[RAILS_ENV]['google_analytics']
   
