@@ -8,11 +8,6 @@ class MessageTest < ActiveSupport::TestCase
       m = Message.create(:body => char) {|m| m.user = users(:quentin)}
     end
   end
-    
-  def test_no_twitter_post_after_message_creation_if_user_and_pass_not_provided
-    Twitter.expects(:post).never
-    Message.create(:body => 'post!') {|m| m.user = users(:quentin)}
-  end
   
   # def test_that_message_with_more_than_140_chars_is_trimmed_before_save
   #   char = ("a".."z").to_a; char = Array.new(140, '').collect{char[rand(char.size)]}.join
