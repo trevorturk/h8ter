@@ -391,6 +391,7 @@ h3 {
 }
 
 #footer {
+	text-align: left;
 	color: #444;
 	margin-top: 5px;
 	font-size: 11px;
