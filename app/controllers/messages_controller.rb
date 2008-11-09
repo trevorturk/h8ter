@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
     @message = current_user.messages.new(params[:message])
     if @message.save
       if TWITTER_USER && TWITTER_PASS
-        Twitter.post('/statuses/update.json', :query => {:status => @message.user + ' hates ' + @message.body, :source => TWITTER_SOURCE})
+        Twitter.post('/statuses/update.json', :query => {:status => @message.user.to_s + ' hates ' + @message.body.to_s, :source => TWITTER_SOURCE})
       end
       redirect_to :action => "index"
     else

@@ -4,6 +4,7 @@ set :repository, 'git://github.com/trevorturk/h8ter.git'
 set :scm, :git
 set :deploy_via, :copy
 set :git_shallow_clone, 1
+set :branch, 'master'
 
 set :application, 'h8ter'
 set :deploy_to, '/home/h8ter'
