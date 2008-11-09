@@ -1,17 +1,19 @@
 <% message = Message.last(:include => :user) %>
-<div id="home-latest">
-  <p id="latest-header"><a href="<%= profile_path(message.user.login) %>"><b><%= message.user %></b> hates...</a></p>
-  <table class="messages messages-latest" cellspacing="0">
-    <tr class="message">
-      <td class="message-user">
-        <a href="<%= profile_path(message.user.login) %>">
-          <%= gravatar_for message.user, :size => 48, :class => 'gravatar' %>
-        </a>
-      </td>
-      <td class="message-body">
-        <%= auto_link(message.body) {|m| truncate(m)} %>
-      </td>
-    </tr>
-  </table>
-  <p class="latest-detail"><%= link_to 'View all &raquo;', messages_path %>
-</div>
+<% if message %>
+  <div id="home-latest">
+    <p id="latest-header"><a href="<%= profile_path(message.user.login) %>"><b><%= message.user %></b> hates</a> </p>
+    <table class="messages messages-latest" cellspacing="0">
+      <tr class="message">
+        <td class="message-user">
+          <a href="<%= profile_path(message.user.login) %>">
+            <%= gravatar_for message.user, :size => 48, :class => 'gravatar' %>
+          </a>
+        </td>
+        <td class="message-body">
+          <%= auto_link(message.body) {|m| truncate(m)} %>
+        </td>
+      </tr>
+    </table>
+    <p class="latest-detail"><%= link_to 'View all &raquo;', messages_path %>
+  </div>
+<% end %>

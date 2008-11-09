@@ -1,7 +1,7 @@
 class Message < ActiveRecord::Base
   
   validates_presence_of :user_id, :body
-  validates_length_of :body, :maximum => 140
+  validates_length_of :body, :maximum => 130
   attr_accessible :body
   belongs_to :user, :counter_cache => true
   

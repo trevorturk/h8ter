@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if success && @user.errors.empty?
       self.current_user = @user
       redirect_back_or_default('/')
-      flash[:notice] = "Welcome -- we're sending you an activation code in order to verify your email address."
+      flash[:notice] = "Welcome. We're sending you an activation code in order to verify your email address."
     else
       flash[:error]  = "We couldn't set up that account, sorry. Please try again, or contact an admin."
       render :action => 'new'
