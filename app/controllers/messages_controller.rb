@@ -10,11 +10,11 @@ class MessagesController < ApplicationController
     @message = current_user.messages.new(params[:message])
     if @message.save
       if TWITTER_USER && TWITTER_PASS
-        Twitter.post('/statuses/update.json', :query => {:status => @message.user.to_s + ' hates ' + @message.body.to_s, :source => TWITTER_SOURCE})
+        Twitter.post('/statuses/update.json', :query => {:status => @message.user.to_s + ' hates... ' + @message.body.to_s, :source => TWITTER_SOURCE})
       end
       redirect_to :action => "index"
     else
-      flash[:error] = "There was a problem sending this message. It can't be blank or more than 130 characters."
+      flash[:error] = "There was a problem sending this message. It can't be blank or more than 115 characters."
       render :action => "new"
     end
   end

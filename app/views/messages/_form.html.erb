@@ -3,13 +3,13 @@
   <% @message ||= Message.new %>
     <div id="message-new">
       <% form_for :message, :url => messages_path do |f| -%>
-      <%= f.text_area :body, :cols => 40, :rows => 2, :maxlength => 130 %>
+      <%= f.text_area :body, :cols => 40, :rows => 2, :maxlength => 115 %>
       <p><%= submit_tag 'Hate' %></p>
     </div>
   <% end -%>
 
   <script type="text/javascript">
-    $("#message_body").charCounter('130', '');
+    $("#message_body").charCounter('115', '');
     $("#message_body").focus();
   </script>
 <% else %>

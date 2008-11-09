@@ -1,7 +1,7 @@
 <% message = Message.last(:include => :user) %>
 <% if message %>
   <div id="home-latest">
-    <p id="latest-header"><a href="<%= profile_path(message.user.login) %>"><b><%= message.user %></b> hates</a> </p>
+    <p id="latest-header"><a href="<%= profile_path(message.user.login) %>"><b><%= message.user %></b> hates...</a> </p>
     <table class="messages messages-latest" cellspacing="0">
       <tr class="message">
         <td class="message-user">

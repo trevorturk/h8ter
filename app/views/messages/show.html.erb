@@ -7,7 +7,7 @@
         </a>
       </td>
       <td class="message-body">
-        <a href="<%= profile_path(@message.user.login) %>"><b><%= @message.user %></b> hates</a> 
+        <a href="<%= profile_path(@message.user.login) %>"><b><%= @message.user %></b> hates...</a> 
         <%= auto_link(@message.body) {|m| truncate(m)} %>
         <span class="detail"><%= link_to time_ago_in_words(@message.created_at) + ' ago', @message %></span>
       </td>
