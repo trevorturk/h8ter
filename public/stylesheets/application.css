@@ -231,6 +231,11 @@ h3 {
 	line-height: 1.1em;
 }
 
+.message-body div {
+	width: 450px;
+	overflow: hidden;
+}
+
 #message-new {
 	margin-top: 8px;
 	width: 500px;

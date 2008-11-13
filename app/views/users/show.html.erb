@@ -9,10 +9,10 @@
   <table class="messages messages-show" cellspacing="0">
     <% @messages.each do |message| %>
       <tr class="message">
-        <td class="message-body">
+        <td class="message-body"><div>
           <%= auto_link(message.body) {|m| truncate(m)} %>
           <span class="detail"><%= link_to time_ago_in_words(message.created_at) + ' ago', message %></span>
-        </td>
+        </div></td>
       </tr>
     <% end %>
   </table>

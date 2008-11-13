@@ -9,9 +9,9 @@
             <%= gravatar_for message.user, :size => 48, :class => 'gravatar' %>
           </a>
         </td>
-        <td class="message-body">
+        <td class="message-body"><div>
           <%= auto_link(message.body) {|m| truncate(m)} %>
-        </td>
+        </div></td>
       </tr>
     </table>
     <p class="latest-detail"><%= link_to 'View all &raquo;', messages_path %>
