@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="generator" content="http://almosteffortless.com/h8ter/" />
   <title><%=t :title %>: <%=t :tagline %></title>
-  <%= javascript_include_tag 'application', 'jquery-1.2.6.min', 'jquery.charcounter', :cache => true %>
+  <%= javascript_include_tag 'application', 'jquery-1.2.6.min', 'jquery.charcounter', 'jquery.corner', :cache => true %>
   <%= stylesheet_link_tag 'application' %>
   <%= auto_discovery_link_tag(:rss, formatted_messages_url(:rss)) %>
 </head>
@@ -25,6 +25,9 @@
     <%= link_to '&aelig;', 'http://almosteffortless.com' %> + <a href="http://twitter.com/h8ter/">twitter.com/h8ter</a> = &hearts;
   </div>
 </div>
+<script type="text/javascript">
+  $('#nav, #content-wide, #content-primary, #content-secondary').corner();
+</script>
 <%= render :partial => 'shared/google_analytics' if GOOGLE_ANALYTICS %>
 </body>
 </html>
