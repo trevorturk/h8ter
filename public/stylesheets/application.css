@@ -11,7 +11,7 @@ body {
   font-family: 'Lucida Grande', sans-serif;
   font-weight: normal;
   color: #111;
-	background: #7db171;
+	background: #a20009;
 }
 
 #wrapper {
@@ -186,9 +186,9 @@ h3 {
 
 #start-link a {
 	color: #fff;
-	background: #71468F;
+	background: #444344;
 	text-decoration: none;
-	border: 1px solid #000;
+	border: 1px solid #c1bdd0;
 	padding: 10px 30px;
 }
 
@@ -397,18 +397,18 @@ h3 {
 
 #footer {
 	text-align: left;
-	color: #444;
+	color: #fff;
 	margin-top: 5px;
 	font-size: 11px;
 }
 
 #footer a {
 	text-decoration: underline;
-	color: #222;
+	color: #fff;
 }
 
 #footer a:hover {
-	color: #eee;
+	color: #f3b400;
 }
 
 .left {

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta name="generator" content="http://almosteffortless.com/h8ttr/" />
+	<meta name="generator" content="http://almosteffortless.com/h8ter/" />
   <title><%=t :title %>: <%=t :tagline %></title>
   <%= javascript_include_tag 'application', 'jquery-1.2.6.min', 'jquery.charcounter', :cache => true %>
   <%= stylesheet_link_tag 'application' %>
@@ -22,8 +22,7 @@
   <div id="wrapper">
   <%= yield %>
   <div id="footer">
-    h8ter is an <%= link_to 'almost effortless', 'http://almosteffortless.com' %> production. &nbsp; 
-    See also: <a href="http://twitter.com/h8ter/">twitter.com/h8ter</a>
+    <%= link_to '&aelig;', 'http://almosteffortless.com' %> + <a href="http://twitter.com/h8ter/">twitter.com/h8ter</a> = &hearts;
   </div>
 </div>
 <%= render :partial => 'shared/google_analytics' if GOOGLE_ANALYTICS %>
