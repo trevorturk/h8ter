@@ -14,7 +14,7 @@ class Test::Unit::TestCase
   end
   
   def defer
-    puts; puts "Deferred: #{self}"
+    puts "\nDeferred: #{caller[0]}"
   end
 
 end
