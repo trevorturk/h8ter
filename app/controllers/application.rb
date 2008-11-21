@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   filter_parameter_logging :password
   include AuthenticatedSystem
-  I18n.populate { require "lib/locale/en-US.rb" }  
   Time.zone = 'Central Time (US & Canada)'
   
   helper_method :current_action, :current_controller
