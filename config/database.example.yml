@@ -4,6 +4,7 @@ development:
   timeout: 5000
   session_key: h8ter_development
   secret: XSheUg1YEEkLX6bSCJYiwgNiV859hL2q
+  site_url: http://example.com
 
 test:
   adapter: sqlite3
@@ -11,6 +12,7 @@ test:
   timeout: 5000
   session_key: h8ter_test
   secret: 1mF89VtBzDu5doFDnu3pfJHLRJxwaFzH
+  site_url: http://example.com
   
 production:
   adapter: # mysql
@@ -20,9 +22,9 @@ production:
   host: # localhost
   session_key: # any string identifying your app
   secret: # at least 32 char random string and should be unique to your installation and kept secret
+  site_url: # http://example.com
   site_email: # example <admin@example.com>
   site_name: # h8ter  
-  site_url: # http://example.com
   google_analytics: # unique key from http://www.google.com/analytics/
   twitter_user: # h8ter
   twitter_pass: # password
