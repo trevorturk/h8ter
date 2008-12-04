@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
     u && u.authenticated?(password) ? u : nil
   end
   
-  def self.top(limit = 20)
+  def self.top(limit = 30)
     User.all(:limit => limit, :order => 'messages_count desc')
   end
   
