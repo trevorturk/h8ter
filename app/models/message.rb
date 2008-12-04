@@ -13,7 +13,7 @@ class Message < ActiveRecord::Base
   def post_message_to_twitter
     if TWITTER_USER && TWITTER_PASS
       Twitter.post('/statuses/update.json', 
-        :query => {:status => @message.user.to_s + ' hates... ' + @message.body.to_s, :source => TWITTER_SOURCE})
+        :query => {:status => self.user.to_s + ' hates... ' + self.body.to_s, :source => TWITTER_SOURCE})
     end
   end
   
