@@ -1,9 +1,12 @@
 class Message < ActiveRecord::Base
   
+  belongs_to :user, :counter_cache => true
+  
   validates_presence_of :user_id, :body
   validates_length_of :body, :maximum => 115
+    
   attr_accessible :body
-  belongs_to :user, :counter_cache => true
+  
   after_save :post_message_to_twitter
   
   def self.get(page = 1)
