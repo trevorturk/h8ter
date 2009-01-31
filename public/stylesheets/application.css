@@ -41,7 +41,7 @@ body {
 	padding: 5px 10px;
 }
 
-#prompt #start-link {
+#prompt .big-link {
 	float: right;
 	margin: 40px;
 }
@@ -179,21 +179,22 @@ h3 {
 	width: 190px;
 }
 
-#start-link {
+.big-link {
 	text-align: center;
 	margin: 30px 0 20px 0;
 }
 
-#start-link a {
+.big-link a {
 	color: #fff;
 	background: #444344;
 	text-decoration: none;
-	border: 1px solid #c1bdd0;
+	border: 1px solid #000;
 	padding: 10px 30px;
 }
 
-#start-link a:hover {
-	text-decoration: underline;
+.big-link a:hover {
+	background: #000;
+	border: 1px solid #ccc;
 }
 
 #home-latest {

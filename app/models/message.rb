@@ -4,6 +4,7 @@ class Message < ActiveRecord::Base
   
   validates_presence_of :user_id, :body
   validates_length_of :body, :maximum => 115
+  validates_uniqueness_of :body, :scope => :user_id
     
   attr_accessible :body
   

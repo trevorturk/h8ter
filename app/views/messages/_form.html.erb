@@ -4,13 +4,17 @@
     <div id="message-new">
       <% form_for :message, :url => messages_path do |f| -%>
       <%= f.text_area :body, :cols => 40, :rows => 2, :maxlength => 115 %>
-      <p><%= submit_tag 'Hate' %></p>
+      <div class="big-link"><%= link_to 'Hate', '#', :class => 'submit' %></div>
     </div>
   <% end -%>
 
   <script type="text/javascript">
     $("#message_body").charCounter('115', '');
     $("#message_body").focus();
+    $(".submit").click( function() {
+      $('.submit').disable;
+      $('.submit').parents('form').submit();
+    });
   </script>
 <% else %>
   <br />

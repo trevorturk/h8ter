@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to :action => "index"
     else
-      flash[:error] = "There was a problem sending this message. It can't be blank or more than 115 characters."
+      flash[:error] = "Messages must be unique, and can't be blank or more than 115 characters."
       render :action => "new"
     end
   end

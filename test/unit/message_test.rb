@@ -9,6 +9,13 @@ class MessageTest < ActiveSupport::TestCase
     end
   end
   
+  def test_that_message_must_be_unique_scoped_to_user
+    Message.create(:body => 'dup') {|m| m.user = users(:quentin)}
+    assert_no_difference 'Message.count' do
+      Message.create(:body => 'dup') {|m| m.user = users(:quentin)}
+    end
+  end
+  
   # def test_that_message_with_more_than_115_chars_is_trimmed_before_save
   #   char = ("a".."z").to_a; char = Array.new(115, '').collect{char[rand(char.size)]}.join
   #   assert_difference 'Message.count' do
