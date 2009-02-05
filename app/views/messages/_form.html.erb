@@ -11,9 +11,8 @@
   <script type="text/javascript">
     $("#message_body").charCounter('115', '');
     $("#message_body").focus();
-    $(".submit").click( function() {
-      $('.submit').disable;
-      $('.submit').parents('form').submit();
+    $(".submit").click(function(){
+      $('.submit').unbind('click').parents('form').submit();
     });
   </script>
 <% else %>
