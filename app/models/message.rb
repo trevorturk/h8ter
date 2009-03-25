@@ -15,9 +15,9 @@ class Message < ActiveRecord::Base
   end
   
   def post_message_to_twitter
-    if TWITTER_USER && TWITTER_PASS
+    if CONFIG['twitter_user'] && CONFIG['twitter_pass']
       Twitter.post('/statuses/update.json', 
-        :query => {:status => self.user.to_s + ' hates... ' + self.body.to_s, :source => TWITTER_SOURCE})
+        :query => {:status => self.user.to_s + ' hates... ' + self.body.to_s, :source => CONFIG['twitter_source']})
     end
   end
   

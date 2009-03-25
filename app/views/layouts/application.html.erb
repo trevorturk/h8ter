@@ -7,7 +7,7 @@
   <title><%=t :title %>: <%=t :tagline %></title>
   <%= javascript_include_tag 'application', 'jquery-1.2.6.min', 'jquery.charcounter', 'jquery.corner', :cache => true %>
   <%= stylesheet_link_tag 'application' %>
-  <%= auto_discovery_link_tag(:rss, formatted_messages_url(:rss)) %>
+  <%= auto_discovery_link_tag(:rss, messages_url(:format => :rss)) %>
 </head>
 <body>
   <div id="header">
@@ -30,6 +30,6 @@
     $('#nav, #content-wide, #content-primary, #content-secondary, #notice, #error').corner();
   });
 </script>
-<%= render :partial => 'shared/google_analytics' if GOOGLE_ANALYTICS %>
+<%= render :partial => 'shared/google_analytics' if CONFIG['google_analytics'] %>
 </body>
 </html>
