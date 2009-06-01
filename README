@@ -19,6 +19,7 @@ git push heroku master
 cp config/config.example.yml config/config.yml
 # set variables for production environment in config/config.yml
 rake heroku:config # add production settings to heroku env
+heroku rake db:schema:load
 heroku open
 
 == CREDITS
