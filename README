@@ -13,8 +13,13 @@ fail/whale
 
 == Deployment on Heroku
 
+sudo gem install heroku
 heroku create
-herogit push heroku master 
+git push heroku master
+cp config/config.example.yml config/config.yml
+# set variables for production environment in config/config.yml
+rake heroku:config # add production settings to heroku env
+heroku open
 
 == CREDITS
 
