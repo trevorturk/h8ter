@@ -5,10 +5,11 @@ http://almosteffortless.com/h8ter
 == Installation
 
 1: cp config/database.example.yml config/database.yml
-2: rake db:create
-3: rake db:schema:load
-4: script/server
-5: fail/whale
+2: cp config/config.example.yml config/config.yml
+3: rake db:create
+4: rake db:schema:load
+5: script/server
+6: fail/whale
 
 == CREDITS
 

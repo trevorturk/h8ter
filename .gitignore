@@ -2,6 +2,7 @@
 /log/*.log
 /tmp/**/*
 /tmp/restart.txt
+/config/config.yml
 /config/database.yml
 /config/deploy.rb
 /db/*.sqlite3

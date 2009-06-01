@@ -11,7 +11,7 @@ Rails::Initializer.run do |config|
   
   config.gem 'httparty'
   
-  CONFIG = YAML.load_file('config/database.yml')[RAILS_ENV]
+  CONFIG = YAML.load_file('config/config.yml')[RAILS_ENV]
   
   config.action_controller.session = {
     :key => CONFIG['session_key'],
