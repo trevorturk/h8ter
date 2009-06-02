@@ -10,9 +10,9 @@ test:
   
 production:
   session_key: # any string identifying your app
-  secret: # at least 32 char random string and should be unique to your installation and kept secret
+  session_secret: # at least 32 char random string and should be unique to your installation and kept secret
   site_url: # http://example.com
-  site_email: # example <admin@example.com>
+  site_email: # noreply@example.com
   site_name: # h8ter  
   google_analytics: # unique key from http://www.google.com/analytics/
   twitter_user: # h8ter

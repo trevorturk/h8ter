@@ -4,22 +4,23 @@ http://almosteffortless.com/h8ter
 
 == Installation
 
+git clone git://github.com/trevorturk/h8ter.git
 cp config/database.example.yml config/database.yml
 cp config/config.example.yml config/config.yml
 rake db:create
 rake db:schema:load
 script/server
-fail/whale
+# http://localhost:3000/
 
 == Deployment on Heroku
 
+# follow installation instructions above for the local environment
+# set variables for production environment in config/config.yml
 sudo gem install heroku
 heroku create
-git push heroku master
-cp config/config.example.yml config/config.yml
-# set variables for production environment in config/config.yml
-rake heroku:config # add production settings to heroku env
+rake heroku:config
 heroku rake db:schema:load
+git push heroku master
 heroku open
 
 == CREDITS

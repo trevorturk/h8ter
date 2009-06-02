@@ -11,8 +11,7 @@ Rails::Initializer.run do |config|
   
   config.gem 'httparty'
   
-  CONFIG = YAML.load_file('config/config.yml')[RAILS_ENV] rescue {}
-  CONFIG = CONFIG.merge(ENV) # for heroku compatibilty http://docs.heroku.com/config-vars
+  CONFIG = (YAML.load_file('config/config.yml')[RAILS_ENV]).merge(ENV) rescue {} # merge(ENV) for heroku compatibility
   
   config.action_controller.session = {
     :key => CONFIG['session_key'],
