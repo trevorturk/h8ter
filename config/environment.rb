@@ -6,7 +6,7 @@ Rails::Initializer.run do |config|
     
   config.time_zone = 'UTC'
   config.i18n.default_locale = :en
-  config.active_record.observers = :user_observer
+  # config.active_record.observers = :user_observer
   config.active_record.partial_updates = true
   
   config.gem 'httparty'
