@@ -15,12 +15,12 @@ script/server
 == Deployment on Heroku
 
 # follow installation instructions above for the local environment
-# set variables for production environment in config/config.yml
 sudo gem install heroku
 heroku create
+# set variables for production environment in config/config.yml
 rake heroku:config
-heroku rake db:schema:load
 git push heroku master
+heroku rake db:schema:load
 heroku open
 
 == CREDITS
