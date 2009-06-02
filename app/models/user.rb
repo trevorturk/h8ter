@@ -23,7 +23,8 @@ class User < ActiveRecord::Base
   has_many :messages, :order => 'created_at desc'
   
   def self.authenticate(login, password)
-    u = find_in_state :first, :active, :conditions => {:login => login} # need to get the salt
+    # u = find_in_state :first, :active, :conditions => {:login => login} # need to get the salt
+    u = find :first, :conditions => {:login => login} # need to get the salt
     u && u.authenticated?(password) ? u : nil
   end
   
