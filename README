@@ -4,7 +4,8 @@ http://almosteffortless.com/h8ter
 
 == Installation
 
-git clone git://github.com/trevorturk/h8ter.git
+git clone git://github.com/trevorturk/h8ter.git h8ter
+cd h8ter
 cp config/database.example.yml config/database.yml
 cp config/config.example.yml config/config.yml
 rake db:create
