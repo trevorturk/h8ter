@@ -10,18 +10,6 @@ class UserTest < ActiveSupport::TestCase
     end
   end
   
-  def test_should_initialize_activation_code_upon_creation
-    user = create_user
-    user.reload
-    assert_not_nil user.activation_code
-  end
-
-  def test_should_create_and_start_in_pending_state
-    user = create_user
-    user.reload
-    assert user.pending?
-  end
-
   def test_should_require_login
     assert_no_difference 'User.count' do
       u = create_user(:login => nil)
@@ -155,70 +143,13 @@ class UserTest < ActiveSupport::TestCase
     assert_not_nil users(:quentin).remember_token_expires_at
     assert_equal users(:quentin).remember_token_expires_at.change(:usec => 0), time
   end
-
-  def test_should_register_passive_user
-    user = create_user(:password => nil, :password_confirmation => nil)
-    assert user.passive?
-    user.update_attributes(:password => 'new password', :password_confirmation => 'new password')
-    user.register!
-    assert user.pending?
-  end
-
-  def test_should_suspend_user
-    users(:quentin).suspend!
-    assert users(:quentin).suspended?
-  end
-
-  def test_suspended_user_should_not_authenticate
-    users(:quentin).suspend!
-    assert_not_equal users(:quentin), User.authenticate('quentin', 'test')
-  end
-
-  def test_should_unsuspend_user_to_active_state
-    users(:quentin).suspend!
-    assert users(:quentin).suspended?
-    users(:quentin).unsuspend!
-    assert users(:quentin).active?
-  end
-
-  def test_should_unsuspend_user_with_nil_activation_code_and_activated_at_to_passive_state
-    users(:quentin).suspend!
-    User.update_all :activation_code => nil, :activated_at => nil
-    assert users(:quentin).suspended?
-    users(:quentin).reload.unsuspend!
-    assert users(:quentin).passive?
-  end
-
-  def test_should_unsuspend_user_with_activation_code_and_nil_activated_at_to_pending_state
-    users(:quentin).suspend!
-    User.update_all :activation_code => 'foo-bar', :activated_at => nil
-    assert users(:quentin).suspended?
-    users(:quentin).reload.unsuspend!
-    assert users(:quentin).pending?
-  end
-
-  def test_should_delete_user
-    assert_nil users(:quentin).deleted_at
-    users(:quentin).delete!
-    assert_not_nil users(:quentin).deleted_at
-    assert users(:quentin).deleted?
-  end
-  
-  def test_should_not_allow_email_change
-    u = users(:quentin)
-    u.update_attribute(:email, 'readonly@example.com')
-    u.reload
-    assert_not_equal u.email, 'readonly@example.com'
-  end
-  
+    
   def test_to_s
     assert_equal users(:quentin).to_s, users(:quentin).login
   end
 
 protected
   def create_user(options = {})
-    record = User.new({ :login => 'quire', :email => 'quire@example.com', :password => 'quire69', :password_confirmation => 'quire69' }.merge(options))
-    record.register! if record.valid?
-    record
+    User.create({ :login => 'quire', :email => 'quire@example.com', :password => 'quire69', :password_confirmation => 'quire69' }.merge(options))
   end
 end
