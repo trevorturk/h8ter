@@ -23,8 +23,7 @@ class User < ActiveRecord::Base
   has_many :messages, :order => 'created_at desc'
   
   def self.authenticate(login, password)
-    # u = find_in_state :first, :active, :conditions => {:login => login} # need to get the salt
-    u = find :first, :conditions => {:login => login} # need to get the salt
+    u = find :first, :conditions => ['LOWER(login) = ?', login.downcase]
     u && u.authenticated?(password) ? u : nil
   end
   
@@ -36,8 +35,8 @@ class User < ActiveRecord::Base
     self.login
   end
   
-protected
-    
+  protected
+  
   def make_activation_code
     self.deleted_at = nil
     self.activation_code = self.class.make_token

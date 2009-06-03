@@ -22,7 +22,6 @@ class UserTest < ActiveSupport::TestCase
     assert user.pending?
   end
 
-
   def test_should_require_login
     assert_no_difference 'User.count' do
       u = create_user(:login => nil)
@@ -110,6 +109,14 @@ class UserTest < ActiveSupport::TestCase
 
   def test_should_authenticate_user
     assert_equal users(:quentin), User.authenticate('quentin', 'monkey')
+  end
+  
+  def test_should_authenticate_user_with_wrong_case_upper
+    assert_equal users(:quentin), User.authenticate('Quentin', 'monkey')
+  end
+  
+  def test_should_authenticate_user_with_wrong_case_lower
+    assert_equal users(:QuentinCase), User.authenticate('quentincase', 'monkey')
   end
 
   def test_should_set_remember_token

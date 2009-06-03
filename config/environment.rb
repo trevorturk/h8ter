@@ -3,16 +3,15 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   require 'yaml'
-    
+  
   config.time_zone = 'UTC'
   config.i18n.default_locale = :en
-  # config.active_record.observers = :user_observer
   config.active_record.partial_updates = true
   
   config.gem 'httparty'
   
   CONFIG = (YAML.load_file('config/config.yml')[RAILS_ENV] rescue {}).merge(ENV) # support yaml and heroku config
-    
+  
   config.action_controller.session = {
     :key => CONFIG['session_key'],
     :secret => CONFIG['session_secret'] || CONFIG['secret']
