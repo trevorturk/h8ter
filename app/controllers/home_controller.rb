@@ -8,9 +8,13 @@ class HomeController < ApplicationController
       render 'home/index'
     end
   end
-  
+    
   def fail
     redirect_to '/500.html'
+  end
+  
+  def exception
+    raise 'exception test'
   end
     
 end

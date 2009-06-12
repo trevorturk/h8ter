@@ -16,7 +16,7 @@ Rails::Initializer.run do |config|
     :key => CONFIG['session_key'],
     :secret => CONFIG['session_secret'] || CONFIG['secret']
   }
-  
+    
   RE_LOGIN_RES = %w(admin all test help blog faq message messages login logout signup settings 
     register home info pages page faq follow followers following followings network networks 
     invitations invitation users user about contact status downloads api jobs tos privacy favorites 
@@ -24,3 +24,7 @@ Rails::Initializer.run do |config|
     notifications notification subscription subscriptions welcome welcomes fail fails everyone everybody)
   
 end
+
+HoptoadNotifier.configure do |config|
+  config.api_key = CONFIG['hoptoad_key']
+end if CONFIG['hoptoad_key']
