@@ -10,6 +10,8 @@ Rails::Initializer.run do |config|
   
   config.gem 'httparty'
   
+  config.middleware.use "NoWWW" if RAILS_ENV == 'production'
+  
   CONFIG = (YAML.load_file('config/config.yml')[RAILS_ENV] rescue {}).merge(ENV) # support yaml and heroku config
   
   config.action_controller.session = {
